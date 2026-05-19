@@ -1163,7 +1163,7 @@ function ComparisonTool({
         </div>
       </div>
 
-      <div className="mt-5 grid gap-4 lg:grid-cols-2">
+      <div className="mt-5 grid min-w-0 gap-4 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]">
         <ComparisonCard
           title="Aparatul A"
           device={firstDevice}
@@ -1245,8 +1245,8 @@ function ComparisonCard({
     <article
       className={
         isEfficient
-          ? "rounded-lg border border-emerald-300 bg-emerald-50 p-4"
-          : "rounded-lg border border-slate-200 bg-white p-4"
+          ? "min-w-0 overflow-hidden rounded-lg border border-emerald-300 bg-emerald-50 p-4"
+          : "min-w-0 overflow-hidden rounded-lg border border-slate-200 bg-white p-4"
       }
     >
       <div className="flex items-center justify-between gap-3">
@@ -1258,10 +1258,10 @@ function ComparisonCard({
         ) : null}
       </div>
 
-      <label className="mt-4 grid gap-2">
+      <label className="mt-4 grid min-w-0 gap-2">
         <span className="text-sm font-medium text-slate-700">Preset aparat</span>
         <select
-          className="h-11 rounded-lg border border-slate-200 bg-white px-3 text-sm text-slate-950 outline-none ring-emerald-500 transition focus:ring-2"
+          className="h-11 w-full min-w-0 rounded-lg border border-slate-200 bg-white px-3 text-sm text-slate-950 outline-none ring-emerald-500 transition focus:ring-2"
           value={device.presetSlug}
           onChange={(event) => onPresetChange(event.target.value)}
         >
@@ -1274,20 +1274,20 @@ function ComparisonCard({
         </select>
       </label>
 
-      <div className="mt-3 grid gap-3 sm:grid-cols-2">
-        <label className="grid gap-2">
+      <div className="mt-3 grid min-w-0 gap-3 md:grid-cols-[minmax(0,1fr)_minmax(8rem,0.62fr)]">
+        <label className="grid min-w-0 gap-2">
           <span className="text-sm font-medium text-slate-700">Nume</span>
           <input
-            className="h-11 rounded-lg border border-slate-200 bg-white px-3 text-sm font-semibold text-slate-950 outline-none ring-emerald-500 transition focus:ring-2"
+            className="h-11 w-full min-w-0 rounded-lg border border-slate-200 bg-white px-3 text-sm font-semibold text-slate-950 outline-none ring-emerald-500 transition focus:ring-2"
             value={device.name}
             onChange={(event) => onChange("name", event.target.value)}
           />
         </label>
-        <label className="grid gap-2">
+        <label className="grid min-w-0 gap-2">
           <span className="text-sm font-medium text-slate-700">Putere</span>
-          <div className="flex items-center gap-2">
+          <div className="flex min-w-0 items-center gap-2">
             <input
-              className="h-11 min-w-0 flex-1 rounded-lg border border-slate-200 bg-white px-3 text-sm font-semibold text-slate-950 outline-none ring-emerald-500 transition focus:ring-2"
+              className="h-11 w-full min-w-0 flex-1 rounded-lg border border-slate-200 bg-white px-3 text-sm font-semibold text-slate-950 outline-none ring-emerald-500 transition focus:ring-2"
               inputMode="decimal"
               value={device.watts}
               onChange={(event) => onChange("watts", event.target.value)}
@@ -1295,13 +1295,13 @@ function ComparisonCard({
             <span className="text-sm font-medium text-slate-500">W</span>
           </div>
         </label>
-        <label className="grid gap-2 sm:col-span-2">
+        <label className="grid min-w-0 gap-2 md:col-span-2">
           <span className="text-sm font-medium text-slate-700">
             Ore de utilizare pe zi
           </span>
-          <div className="flex items-center gap-2">
+          <div className="flex min-w-0 items-center gap-2">
             <input
-              className="h-11 min-w-0 flex-1 rounded-lg border border-slate-200 bg-white px-3 text-sm font-semibold text-slate-950 outline-none ring-emerald-500 transition focus:ring-2"
+              className="h-11 w-full min-w-0 flex-1 rounded-lg border border-slate-200 bg-white px-3 text-sm font-semibold text-slate-950 outline-none ring-emerald-500 transition focus:ring-2"
               inputMode="decimal"
               value={device.hoursPerDay}
               onChange={(event) => onChange("hoursPerDay", event.target.value)}
@@ -1311,8 +1311,8 @@ function ComparisonCard({
         </label>
       </div>
 
-      <div className="mt-4 grid gap-3 sm:grid-cols-2">
-        <div className="rounded-lg bg-white p-3">
+      <div className="mt-4 grid min-w-0 gap-3 sm:grid-cols-2">
+        <div className="min-w-0 rounded-lg bg-white p-3">
           <p className="text-xs uppercase tracking-wider text-slate-500">
             Consum lunar
           </p>
@@ -1320,7 +1320,7 @@ function ComparisonCard({
             {result ? `${formatNumber(result.monthlyKwh)} kWh` : "—"}
           </p>
         </div>
-        <div className="rounded-lg bg-white p-3">
+        <div className="min-w-0 rounded-lg bg-white p-3">
           <p className="text-xs uppercase tracking-wider text-slate-500">
             Cost lunar
           </p>
