@@ -11,6 +11,42 @@ export const appliancePresets: AppliancePreset[] = [
       "Consum estimativ pentru un aparat de aer conditionat folosit cateva ore pe zi."
   },
   {
+    name: "Aer conditionat 9000 BTU",
+    slug: "aer-conditionat-9000-btu",
+    watts: 900,
+    hoursPerDay: 5,
+    category: "Climatizare",
+    summary:
+      "Estimare pentru camere mici sau dormitoare; consumul depinde de temperatura setata si izolatie."
+  },
+  {
+    name: "Aer conditionat 18000 BTU",
+    slug: "aer-conditionat-18000-btu",
+    watts: 1800,
+    hoursPerDay: 5,
+    category: "Climatizare",
+    summary:
+      "Estimare pentru livinguri sau spatii mai mari, unde durata de functionare conteaza mult."
+  },
+  {
+    name: "Ventilator",
+    slug: "ventilator",
+    watts: 50,
+    hoursPerDay: 8,
+    category: "Climatizare",
+    summary:
+      "Consum redus fata de racirea activa; ventilatorul misca aerul, dar nu scade temperatura camerei."
+  },
+  {
+    name: "Dezumidificator",
+    slug: "dezumidificator",
+    watts: 300,
+    hoursPerDay: 6,
+    category: "Climatizare",
+    summary:
+      "Consum influentat de umiditatea camerei, capacitate si setarea dorita."
+  },
+  {
     name: "Frigider",
     slug: "frigider",
     watts: 120,
@@ -92,6 +128,42 @@ export const appliancePresets: AppliancePreset[] = [
       "Aparatele de incalzire electrica au de obicei putere mare si pot influenta rapid factura."
   },
   {
+    name: "Aeroterma",
+    slug: "aeroterma",
+    watts: 2000,
+    hoursPerDay: 2,
+    category: "Incalzire",
+    summary:
+      "Incalzeste rapid, dar poate costa mult daca este folosita zilnic multe ore."
+  },
+  {
+    name: "Convector electric",
+    slug: "convector-electric",
+    watts: 2000,
+    hoursPerDay: 4,
+    category: "Incalzire",
+    summary:
+      "Consum dependent de termostat, izolatie si durata reala de functionare."
+  },
+  {
+    name: "Radiator cu ulei",
+    slug: "radiator-ulei",
+    watts: 2000,
+    hoursPerDay: 4,
+    category: "Incalzire",
+    summary:
+      "Are inertie termica, dar costul depinde de timpul in care rezistenta este alimentata."
+  },
+  {
+    name: "Panou radiant",
+    slug: "panou-radiant",
+    watts: 800,
+    hoursPerDay: 5,
+    category: "Incalzire",
+    summary:
+      "Potrivit pentru incalzire locala; calculeaza separat daca folosesti mai multe panouri."
+  },
+  {
     name: "Masina de spalat",
     slug: "masina-de-spalat",
     watts: 700,
@@ -99,6 +171,33 @@ export const appliancePresets: AppliancePreset[] = [
     category: "Electrocasnice",
     summary:
       "Consum mediu pentru un ciclu de spalare; incalzirea apei poate creste consumul."
+  },
+  {
+    name: "Congelator",
+    slug: "congelator",
+    watts: 100,
+    hoursPerDay: 10,
+    category: "Electrocasnice",
+    summary:
+      "Functioneaza permanent ca aparat, dar compresorul porneste intermitent."
+  },
+  {
+    name: "Lada frigorifica",
+    slug: "lada-frigorifica",
+    watts: 120,
+    hoursPerDay: 9,
+    category: "Electrocasnice",
+    summary:
+      "Consum influentat de volum, temperatura ambientala si frecventa deschiderii capacului."
+  },
+  {
+    name: "Masina de spalat vase",
+    slug: "masina-spalat-vase",
+    watts: 1200,
+    hoursPerDay: 1,
+    category: "Electrocasnice",
+    summary:
+      "Consumul depinde de program, temperatura apei si numarul de cicluri lunare."
   },
   {
     name: "Uscator rufe",
@@ -117,6 +216,33 @@ export const appliancePresets: AppliancePreset[] = [
     category: "Bucatarie",
     summary:
       "Consum orientativ pentru gatit la cuptor, cu durata ajustabila in functie de reteta."
+  },
+  {
+    name: "Cuptor cu microunde",
+    slug: "cuptor-microunde",
+    watts: 1000,
+    hoursPerDay: 0.25,
+    category: "Bucatarie",
+    summary:
+      "Putere mare pe perioade scurte; costul depinde de minutele zilnice de folosire."
+  },
+  {
+    name: "Fierbator electric",
+    slug: "fierbator-electric",
+    watts: 2000,
+    hoursPerDay: 0.2,
+    category: "Bucatarie",
+    summary:
+      "Consuma mult pe moment, dar functioneaza putin timp; cantitatea de apa conteaza."
+  },
+  {
+    name: "Espressor",
+    slug: "espressor",
+    watts: 1400,
+    hoursPerDay: 0.25,
+    category: "Bucatarie",
+    summary:
+      "Consum influentat de incalzire, numarul de cafele, spumare si timpul in stand-by."
   },
   {
     name: "Laptop",

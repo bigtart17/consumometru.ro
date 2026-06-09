@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Consumometru - calculator consum electric</title>
+  <desc id="desc">Imagine de share pentru Consumometru, calculator de consum electric si cost energie.</desc>
+  <defs>
+    <pattern id="grid" width="56" height="56" patternUnits="userSpaceOnUse">
+      <path d="M56 0H0v56" fill="none" stroke="#bbf7d0" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="630" fill="#f0fdf4"/>
+  <rect width="1200" height="630" fill="url(#grid)" opacity=".55"/>
+  <rect x="72" y="72" width="1056" height="486" rx="28" fill="#ffffff" stroke="#a7f3d0" stroke-width="2"/>
+  <rect x="112" y="112" width="82" height="82" rx="20" fill="#0f9f6e"/>
+  <path d="M162 126 132 177h24l-7 42 37-58h-25l1-35Z" fill="#ffffff"/>
+  <text x="220" y="162" fill="#020617" font-family="Arial, Helvetica, sans-serif" font-size="42" font-weight="700">Consumometru</text>
+  <text x="112" y="292" fill="#020617" font-family="Arial, Helvetica, sans-serif" font-size="68" font-weight="800">Calculator consum electric</text>
+  <text x="112" y="372" fill="#334155" font-family="Arial, Helvetica, sans-serif" font-size="34">Afla rapid cati kWh consuma un aparat si cat te costa pe luna.</text>
+  <rect x="112" y="430" width="270" height="62" rx="16" fill="#ecfdf5" stroke="#a7f3d0"/>
+  <text x="140" y="471" fill="#065f46" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700">kWh, lei si estimari</text>
+  <rect x="410" y="430" width="250" height="62" rx="16" fill="#ecfdf5" stroke="#a7f3d0"/>
+  <text x="438" y="471" fill="#065f46" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700">Ghiduri pe aparate</text>
+  <text x="112" y="535" fill="#64748b" font-family="Arial, Helvetica, sans-serif" font-size="22">https://consumometru.ro</text>
+</svg>

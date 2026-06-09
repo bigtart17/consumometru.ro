@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import Script from "next/script";
 import { ConsentManager } from "@/components/consent-manager";
-import { siteConfig } from "@/lib/site";
+import { absoluteUrl, siteConfig } from "@/lib/site";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -13,6 +13,16 @@ export const metadata: Metadata = {
   description: siteConfig.description,
   applicationName: siteConfig.name,
   manifest: "/manifest.json",
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/icon.svg", type: "image/svg+xml" },
+      { url: "/icon-192.png", sizes: "192x192", type: "image/png" },
+      { url: "/icon-512.png", sizes: "512x512", type: "image/png" }
+    ],
+    shortcut: "/favicon.ico",
+    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }]
+  },
   alternates: {
     canonical: "/"
   },
@@ -23,13 +33,22 @@ export const metadata: Metadata = {
     url: siteConfig.url,
     siteName: siteConfig.name,
     locale: "ro_RO",
-    type: "website"
+    type: "website",
+    images: [
+      {
+        url: absoluteUrl("/og-image.png"),
+        width: 1200,
+        height: 630,
+        alt: "Consumometru - calculator consum electric si cost energie"
+      }
+    ]
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title: "Consumometru - calculator consum electric",
     description:
-      "Afla cat consuma aparatele din casa, compara costuri lunare si vezi exemple utile pentru factura de energie."
+      "Afla cat consuma aparatele din casa, compara costuri lunare si vezi exemple utile pentru factura de energie.",
+    images: [absoluteUrl("/og-image.png")]
   },
   robots: {
     index: true,

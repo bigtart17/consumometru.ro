@@ -7,7 +7,6 @@ import { siteConfig } from "@/lib/site";
 
 const navigationLinks = [
   { href: "/#calculator", label: "Calculator" },
-  { href: "/#calculatoare-populare", label: "Calculatoare" },
   { href: "/#simulator-factura", label: "Simulator" },
   { href: "/#ghiduri-utile", label: "Ghiduri" },
   { href: "/#faq", label: "FAQ" },

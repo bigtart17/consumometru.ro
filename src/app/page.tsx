@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { BillSimulator } from "@/components/bill-simulator";
+import { DeferredBillSimulator } from "@/components/deferred-bill-simulator";
 import { EnergyCalculator } from "@/components/energy-calculator";
 import { Faq } from "@/components/faq";
 import { SiteFooter } from "@/components/site-footer";
@@ -130,37 +130,52 @@ const dedicatedGuides = [
   { href: "/cat-consuma/bec-led", label: "Cat consuma un bec LED" }
 ];
 
-const popularCalculators = [
+const homepageEntryPoints = [
   {
     href: "/#calculator",
-    title: "Calculator consum aparat",
-    body: "Calculeaza rapid consumul si costul pentru un singur aparat electric."
+    title: "Calculeaza consumul unui aparat",
+    body: "Introdu puterea in W, orele de utilizare si pretul kWh pentru o estimare rapida.",
+    cta: "Deschide calculatorul"
+  },
+  {
+    href: "/comparatii",
+    title: "Compara doua aparate",
+    body: "Vezi diferente lunare si anuale intre variante folosite frecvent in casa.",
+    cta: "Vezi comparatiile"
   },
   {
     href: "/#simulator-factura",
-    title: "Simulator factura lunara",
-    body: "Adauga mai multe aparate si vezi consumul total estimat al locuintei."
+    title: "Simuleaza factura lunara",
+    body: "Adauga mai multe aparate si afla cine contribuie cel mai mult la total.",
+    cta: "Porneste simulatorul"
   },
   {
-    href: "/#top-consumatori",
-    title: "Top consumatori din casa",
-    body: "Vezi aparatele care pot influenta cel mai mult factura de energie."
+    href: "/eficienta-energetica",
+    title: "Vezi ghiduri si exemple",
+    body: "Citeste explicatii despre kWh, factura si metode realiste de reducere a consumului.",
+    cta: "Deschide ghidurile"
   },
   {
-    href: "/cat-consuma/boiler-electric-80l",
-    title: "Calculator boiler electric",
-    body: "Porneste de la un scenariu precompletat pentru apa calda."
+    href: "/consum-locuinta/apartament-2-camere",
+    title: "Consum pe locuinta",
+    body: "Porneste de la scenarii pentru apartament, casa sau familie si ajusteaza dupa cazul tau.",
+    cta: "Vezi scenarii"
   },
   {
-    href: "/cat-consuma/aer-conditionat-12000-btu",
-    title: "Calculator aer conditionat",
-    body: "Estimeaza costul lunar pentru racire sau folosire intensa vara."
-  },
-  {
-    href: "/cat-consuma/calorifer-electric",
-    title: "Calculator calorifer electric",
-    body: "Compara rapid costul incalzirii electrice directe."
+    href: "/climatizare",
+    title: "Hub-uri tematice",
+    body: "Exploreaza aparatele grupate pe climatizare, incalzire, electrocasnice, electronice si iluminat.",
+    cta: "Vezi categoriile"
   }
+];
+
+const thematicHubs = [
+  { href: "/climatizare", label: "Climatizare" },
+  { href: "/incalzire-electrica", label: "Incalzire electrica" },
+  { href: "/electrocasnice", label: "Electrocasnice" },
+  { href: "/electronice", label: "Electronice" },
+  { href: "/iluminat", label: "Iluminat" },
+  { href: "/eficienta-energetica", label: "Eficienta energetica" }
 ];
 
 export default function Home() {
@@ -207,39 +222,59 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="calculatoare-populare" className="border-y border-emerald-100 bg-white/72 px-4 py-12 sm:px-6 lg:px-8">
+      <section id="navigare-rapida" className="border-y border-emerald-100 bg-white/72 px-4 py-10 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-5 lg:grid-cols-[0.7fr_1.3fr] lg:items-end">
             <div>
               <p className="text-sm font-semibold uppercase tracking-wider text-emerald-700">
-                Calculatoare populare
+                Navigare rapida
               </p>
               <h2 className="mt-2 text-3xl font-semibold text-slate-950">
-                Incepe cu estimarea de care ai nevoie
+                Alege ce vrei sa estimezi
               </h2>
             </div>
             <p className="text-sm leading-6 text-slate-600">
-              Linkurile de mai jos duc catre instrumentele si paginile cele mai
-              folosite. Sunt gandite ca puncte rapide de intrare pentru consumul
-              unui aparat, factura lunara sau aparatele mari din casa.
+              Consumometru nu este doar un calculator pentru un aparat. Poti
+              compara variante, simula factura unei locuinte si citi ghiduri
+              grupate pe tipuri de aparate.
             </p>
           </div>
 
-          <div className="mt-7 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-            {popularCalculators.map((item) => (
+          <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            {homepageEntryPoints.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className="rounded-lg border border-emerald-100 bg-white p-5 shadow-sm transition hover:border-emerald-300"
+                className="group flex min-h-40 flex-col rounded-lg border border-emerald-100 bg-white p-5 shadow-sm transition hover:border-emerald-300 hover:-translate-y-0.5"
               >
                 <h3 className="text-lg font-semibold text-slate-950">
                   {item.title}
                 </h3>
-                <p className="mt-2 text-sm leading-6 text-slate-600">
+                <p className="mt-2 flex-1 text-sm leading-6 text-slate-600">
                   {item.body}
                 </p>
+                <span className="mt-4 text-sm font-semibold text-emerald-700 group-hover:text-emerald-800">
+                  {item.cta}
+                </span>
               </Link>
             ))}
+          </div>
+
+          <div className="mt-4 rounded-lg border border-emerald-100 bg-emerald-50/70 p-4">
+            <p className="text-sm font-semibold text-emerald-950">
+              Hub-uri tematice pentru cautari rapide
+            </p>
+            <div className="mt-3 flex flex-wrap gap-2">
+              {thematicHubs.map((hub) => (
+                <Link
+                  key={hub.href}
+                  href={hub.href}
+                  className="rounded-full border border-emerald-200 bg-white px-3 py-2 text-sm font-semibold text-emerald-800 transition hover:border-emerald-300 hover:text-emerald-950"
+                >
+                  {hub.label}
+                </Link>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -372,7 +407,7 @@ export default function Home() {
         </div>
       </section>
 
-      <BillSimulator />
+      <DeferredBillSimulator />
 
       <TopConsumers />
 

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">Consumometru</title>
+  <desc id="desc">Icon Consumometru pentru calculatorul de consum electric.</desc>
+  <rect width="512" height="512" rx="96" fill="#0f9f6e"/>
+  <path d="M288 54 151 278h96l-28 180 150-240h-99l18-164Z" fill="#ffffff"/>
+  <path d="M288 54 151 278h96l-28 180 150-240h-99l18-164Z" fill="none" stroke="#064e3b" stroke-width="18" stroke-linejoin="round" opacity=".18"/>
+</svg>

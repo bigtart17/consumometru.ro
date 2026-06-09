@@ -1,4 +1,5 @@
 import { appliancePresets } from "@/data/appliancePresets";
+import { additionalSeoAppliancePages } from "@/data/seoAdditionalAppliancePages";
 
 export type SeoFaqItem = {
   question: string;
@@ -32,6 +33,7 @@ export type SeoAppliancePage = {
   shortName: string;
   intro: string;
   watts: number;
+  consumptionRange?: string;
   hoursPerDay: number;
   daysPerMonth: number;
   pricePerKwh: number;
@@ -58,7 +60,7 @@ function preset(slug: string) {
   return item;
 }
 
-export const seoAppliancePages: SeoAppliancePage[] = [
+const baseSeoAppliancePages: SeoAppliancePage[] = [
   {
     slug: "aer-conditionat-12000-btu",
     presetSlug: "aer-conditionat",
@@ -70,6 +72,7 @@ export const seoAppliancePages: SeoAppliancePage[] = [
     intro:
       "Un aer conditionat poate fi un consumator important vara, dar costul real depinde mult de modul in care este folosit. Calculatorul este precompletat pentru un aparat de aproximativ 12000 BTU si poate fi ajustat dupa modelul tau.",
     watts: 1200,
+    consumptionRange: "aproximativ 0,8-2,0 kWh pe ora, in functie de model si setari",
     hoursPerDay: 5,
     daysPerMonth: 30,
     pricePerKwh: defaultPricePerKwh,
@@ -1162,4 +1165,9 @@ export const seoAppliancePages: SeoAppliancePage[] = [
       }
     ]
   }
+];
+
+export const seoAppliancePages: SeoAppliancePage[] = [
+  ...baseSeoAppliancePages,
+  ...additionalSeoAppliancePages
 ];

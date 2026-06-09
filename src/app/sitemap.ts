@@ -1,5 +1,8 @@
 import type { MetadataRoute } from "next";
 import { seoAppliancePages } from "@/data/seoAppliancePages";
+import { seoComparisons } from "@/data/seoComparisons";
+import { seoHubs } from "@/data/seoHubs";
+import { allScenarioPages } from "@/data/seoScenarioPages";
 import { siteConfig } from "@/lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -9,6 +12,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
     changeFrequency: "monthly" as const,
     priority: 0.85
   }));
+  const hubPages = seoHubs.map((hub) => ({
+    url: `${siteConfig.url}/${hub.slug}`,
+    lastModified: new Date(),
+    changeFrequency: "monthly" as const,
+    priority: 0.8
+  }));
+  const comparisonPages = seoComparisons.map((comparison) => ({
+    url: `${siteConfig.url}/comparatii/${comparison.slug}`,
+    lastModified: new Date(),
+    changeFrequency: "monthly" as const,
+    priority: 0.78
+  }));
+  const scenarioPages = allScenarioPages.map((page) => ({
+    url: `${siteConfig.url}/${page.basePath}/${page.slug}`,
+    lastModified: new Date(),
+    changeFrequency: "monthly" as const,
+    priority: 0.76
+  }));
 
   return [
     {
@@ -17,6 +38,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly",
       priority: 1
     },
+    ...hubPages,
+    ...scenarioPages,
+    {
+      url: `${siteConfig.url}/comparatii`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.75
+    },
+    ...comparisonPages,
     ...consumptionPages,
     {
       url: `${siteConfig.url}/cookies`,
@@ -41,6 +71,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       changeFrequency: "yearly",
       priority: 0.4
+    },
+    {
+      url: `${siteConfig.url}/metodologie`,
+      lastModified: new Date(),
+      changeFrequency: "yearly",
+      priority: 0.45
+    },
+    {
+      url: `${siteConfig.url}/surse`,
+      lastModified: new Date(),
+      changeFrequency: "yearly",
+      priority: 0.45
     },
     {
       url: `${siteConfig.url}/contact`,

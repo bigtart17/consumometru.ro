@@ -1,9 +1,21 @@
 import { absoluteUrl, siteConfig } from "@/lib/site";
 import { seoAppliancePages } from "@/data/seoAppliancePages";
+import { seoComparisons } from "@/data/seoComparisons";
+import { seoHubs } from "@/data/seoHubs";
+import { allScenarioPages } from "@/data/seoScenarioPages";
 
 export function GET() {
   const guideLinks = seoAppliancePages
     .map((page) => `- ${page.h1}: ${absoluteUrl(`/cat-consuma/${page.slug}`)}`)
+    .join("\n");
+  const hubLinks = seoHubs
+    .map((hub) => `- ${hub.h1}: ${absoluteUrl(`/${hub.slug}`)}`)
+    .join("\n");
+  const comparisonLinks = seoComparisons
+    .map((comparison) => `- ${comparison.h1}: ${absoluteUrl(`/comparatii/${comparison.slug}`)}`)
+    .join("\n");
+  const scenarioLinks = allScenarioPages
+    .map((page) => `- ${page.h1}: ${absoluteUrl(`/${page.basePath}/${page.slug}`)}`)
     .join("\n");
 
   const body = `# ${siteConfig.name}
@@ -22,10 +34,24 @@ Site-ul ajuta utilizatorii din Romania sa estimeze consumul in kWh si costul apr
 - Termeni si conditii: ${absoluteUrl("/termeni")}
 - Contact: ${absoluteUrl("/contact")}
 - Despre proiect: ${absoluteUrl("/despre")}
+- Metodologie calcul: ${absoluteUrl("/metodologie")}
+- Surse si valori orientative: ${absoluteUrl("/surse")}
 
 ## Ghiduri pentru aparate
 
 ${guideLinks}
+
+## Hub-uri tematice
+
+${hubLinks}
+
+## Comparatii
+
+${comparisonLinks}
+
+## Ghiduri de cost si locuinta
+
+${scenarioLinks}
 
 ## Nota
 
