@@ -38,6 +38,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly",
       priority: 1
     },
+    {
+      url: `${siteConfig.url}/calculeaza`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.86
+    },
+    {
+      url: `${siteConfig.url}/aparate`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.86
+    },
+    {
+      url: `${siteConfig.url}/ghiduri`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.82
+    },
     ...hubPages,
     ...scenarioPages,
     {

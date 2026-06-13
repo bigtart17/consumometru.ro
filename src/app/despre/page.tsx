@@ -4,14 +4,26 @@ import { LegalPage } from "@/components/legal-page";
 export const metadata: Metadata = {
   title: "Despre Consumometru",
   description:
-    "Afla de ce exista Consumometru, cui ii este util, cum sunt facute estimarile si ce limitari au calculele de consum electric."
+    "Afla de ce exista Consumometru, cui ii este util, cum sunt facute estimarile si ce limitari au calculele de consum electric.",
+  alternates: {
+    canonical: "/despre"
+  },
+  openGraph: {
+    title: "Despre Consumometru",
+    description:
+      "Afla de ce exista Consumometru, cum sunt facute estimarile si ce limitari au calculele de consum electric.",
+    url: "/despre",
+    type: "article",
+    locale: "ro_RO"
+  }
 };
 
 export default function AboutPage() {
   return (
     <LegalPage
+      breadcrumbPath="/despre"
       title="Despre Consumometru"
-      intro="Consumometru este o aplicatie web creata pentru utilizatorii din Romania care vor sa inteleaga mai usor cat consuma aparatele electrice din locuinta si cum se poate transforma acest consum in cost lunar. Scopul paginii nu este sa inlocuiasca factura sau datele furnizorului, ci sa ofere o estimare clara, rapida si usor de verificat."
+      intro="Consumometru este o aplicatie web pentru oamenii din Romania care vor sa inteleaga mai usor cat consuma aparatele electrice din locuinta si cum se transforma acest consum in cost lunar. Nu inlocuieste factura sau datele furnizorului, dar ofera un calcul clar, rapid si usor de verificat."
       sections={[
         {
           title: "De ce exista acest calculator",
@@ -23,19 +35,19 @@ export default function AboutPage() {
         },
         {
           title: "Cum sunt facute estimarile",
-          body: "Calculele folosesc formula standard kWh = W / 1000 × ore × zile. Puterea aparatului este exprimata in W, iar rezultatul este transformat in kWh, unitatea folosita pe factura de energie. Costul estimativ se obtine inmultind consumul in kWh cu pretul introdus pentru energia electrica. Preset-urile din aplicatie sunt valori orientative pentru aparate comune, iar utilizatorul le poate modifica manual atunci cand are date mai exacte de pe eticheta, manual sau factura."
+          body: "Calculele folosesc formula standard kWh = W / 1000 × ore × zile. Puterea aparatului este exprimata in W, iar rezultatul este transformat in kWh, unitatea folosita pe factura de energie. Costul se obtine inmultind consumul in kWh cu pretul introdus pentru energia electrica. Preset-urile sunt repere pentru aparate comune si pot fi modificate manual cand ai date mai exacte de pe eticheta, manual sau factura."
         },
         {
           title: "Ce limitari au calculele",
-          body: "Rezultatele sunt estimative si trebuie interpretate ca punct de pornire, nu ca valoare garantata. Consumul real poate varia in functie de model, vechime, clasa energetica, temperatura setata, modul de utilizare, izolatia locuintei, ciclurile de functionare ale aparatului si conditiile din incapere. De exemplu, un frigider nu consuma la putere maxima 24 de ore pe zi, iar un aer conditionat inverter isi poate ajusta puterea in timpul functionarii."
+          body: "Rezultatele trebuie citite ca punct de pornire, nu ca valoare garantata. Consumul real este influentat de model, vechime, clasa energetica, temperatura setata, modul de utilizare, izolatia locuintei, ciclurile de functionare ale aparatului si conditiile din incapere. De exemplu, un frigider nu consuma la putere maxima 24 de ore pe zi, iar un aer conditionat inverter isi poate ajusta puterea in timpul functionarii."
         },
         {
           title: "Pretul kWh poate varia",
-          body: "Pretul energiei electrice nu este acelasi pentru toti utilizatorii. El poate varia in functie de furnizor, contract, perioada, taxe, tarife reglementate sau conditii comerciale. De aceea, calculatorul permite modificarea pretului pe kWh. Pentru cea mai apropiata estimare, este recomandat sa folosesti valoarea din factura sau din contractul tau de energie electrica."
+          body: "Pretul energiei electrice nu este acelasi pentru toata lumea. El este influentat de furnizor, contract, perioada, taxe, tarife reglementate sau conditii comerciale. De aceea, calculatorul permite modificarea pretului pe kWh. Pentru un calcul apropiat de situatia ta, introdu valoarea din factura sau din contractul de energie electrica."
         },
         {
           title: "Cum trebuie folosite rezultatele",
-          body: "Estimarea este utila pentru comparatii si decizii practice: cat se schimba costul daca reduci utilizarea cu o ora pe zi, cat poate costa un aparat folosit zilnic sau ce diferente apar intre doua aparate similare. Pentru masuratori exacte, cea mai buna solutie ramane un wattmetru sau datele oficiale ale producatorului si ale furnizorului de energie."
+          body: "Rezultatele sunt utile pentru comparatii si decizii practice: cat se schimba costul daca reduci utilizarea cu o ora pe zi, cat poate costa un aparat folosit zilnic sau ce diferente apar intre doua aparate similare. Pentru masuratori exacte, cea mai buna solutie ramane un wattmetru sau datele oficiale ale producatorului si ale furnizorului de energie."
         },
         {
           title: "Transparenta si responsabilitate",

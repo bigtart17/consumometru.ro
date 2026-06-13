@@ -4,12 +4,24 @@ import { LegalPage } from "@/components/legal-page";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Contact pentru intrebari despre Consumometru, confidentialitate, cookies, GDPR sau corectarea informatiilor."
+    "Contact pentru intrebari despre Consumometru, confidentialitate, cookies, GDPR sau corectarea informatiilor.",
+  alternates: {
+    canonical: "/contact"
+  },
+  openGraph: {
+    title: "Contact",
+    description:
+      "Trimite intrebari despre Consumometru, confidentialitate, cookies, GDPR sau corectarea informatiilor.",
+    url: "/contact",
+    type: "article",
+    locale: "ro_RO"
+  }
 };
 
 export default function ContactPage() {
   return (
     <LegalPage
+      breadcrumbPath="/contact"
       title="Contact"
       intro="Pentru intrebari despre site, continut, confidentialitate, cookies sau corectarea unei informatii, ne poti scrie prin email. Consumometru este un proiect web informativ, iar mesajele sunt tratate in functie de natura solicitarii si volumul primit."
       sections={[

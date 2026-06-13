@@ -4,12 +4,24 @@ import { LegalPage } from "@/components/legal-page";
 export const metadata: Metadata = {
   title: "Politica de confidentialitate",
   description:
-    "Politica de confidentialitate pentru Consumometru: date prelucrate, cookies, Google AdSense, Google Analytics si drepturi GDPR."
+    "Politica de confidentialitate pentru Consumometru: date prelucrate, cookies, Google AdSense, Google Analytics si drepturi GDPR.",
+  alternates: {
+    canonical: "/confidentialitate"
+  },
+  openGraph: {
+    title: "Politica de confidentialitate",
+    description:
+      "Vezi cum trateaza Consumometru datele, cookies, Google AdSense, Google Analytics si drepturile GDPR.",
+    url: "/confidentialitate",
+    type: "article",
+    locale: "ro_RO"
+  }
 };
 
 export default function PrivacyPage() {
   return (
     <LegalPage
+      breadcrumbPath="/confidentialitate"
       title="Politica de confidentialitate"
       intro="Aceasta politica explica modul in care pot fi prelucrate datele atunci cand folosesti Consumometru. Site-ul este un proiect web informativ, destinat estimarii consumului aparatelor electrice. Nu este necesar sa iti creezi cont pentru a folosi calculatorul."
       sections={[

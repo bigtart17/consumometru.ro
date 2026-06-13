@@ -121,7 +121,7 @@ export default async function ConsumptionPage({ params }: ConsumptionPageProps) 
   const faqSchema = createFaqSchema(page.faq);
   const breadcrumbSchema = createBreadcrumbSchema([
     { name: "Acasa", item: absoluteUrl("/") },
-    { name: "Ghiduri consum aparate", item: absoluteUrl("/#ghiduri-utile") },
+    { name: "Aparate", item: absoluteUrl("/aparate") },
     { name: page.h1, item: absoluteUrl(`/cat-consuma/${page.slug}`) }
   ]);
 
@@ -138,7 +138,7 @@ export default async function ConsumptionPage({ params }: ConsumptionPageProps) 
               className="mb-5"
               items={[
                 { label: "Acasa", href: "/" },
-                { label: "Ghiduri consum", href: "/#ghiduri-utile" },
+                { label: "Aparate", href: "/aparate" },
                 { label: page.shortName }
               ]}
             />

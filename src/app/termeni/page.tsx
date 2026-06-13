@@ -4,12 +4,24 @@ import { LegalPage } from "@/components/legal-page";
 export const metadata: Metadata = {
   title: "Termeni si conditii",
   description:
-    "Termeni si conditii pentru utilizarea Consumometru, inclusiv disclaimer pentru estimari, continut informativ si reclame."
+    "Termeni si conditii pentru utilizarea Consumometru, inclusiv disclaimer pentru estimari, continut informativ si reclame.",
+  alternates: {
+    canonical: "/termeni"
+  },
+  openGraph: {
+    title: "Termeni si conditii",
+    description:
+      "Conditiile generale pentru folosirea Consumometru, inclusiv limitele estimarilor si continutul informativ.",
+    url: "/termeni",
+    type: "article",
+    locale: "ro_RO"
+  }
 };
 
 export default function TermsPage() {
   return (
     <LegalPage
+      breadcrumbPath="/termeni"
       title="Termeni si conditii"
       intro="Acesti termeni descriu conditiile generale de utilizare pentru Consumometru. Site-ul are scop informativ si ofera instrumente orientative pentru estimarea consumului electric si a costurilor asociate."
       sections={[

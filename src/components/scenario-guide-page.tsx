@@ -23,6 +23,7 @@ export function ScenarioGuidePage({ page }: ScenarioGuidePageProps) {
   const faqSchema = createFaqSchema(page.faq);
   const breadcrumbSchema = createBreadcrumbSchema([
     { name: "Acasa", item: absoluteUrl("/") },
+    { name: "Ghiduri", item: absoluteUrl("/ghiduri") },
     { name: page.h1, item: absoluteUrl(path) }
   ]);
 
@@ -34,7 +35,13 @@ export function ScenarioGuidePage({ page }: ScenarioGuidePageProps) {
 
       <section className="px-4 py-10 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-7xl">
-          <SeoBreadcrumbs items={[{ label: "Acasa", href: "/" }, { label: page.h1 }]} />
+          <SeoBreadcrumbs
+            items={[
+              { label: "Acasa", href: "/" },
+              { label: "Ghiduri", href: "/ghiduri" },
+              { label: page.h1 }
+            ]}
+          />
 
           <div className="grid gap-8 lg:grid-cols-[0.86fr_1.14fr]">
             <article>

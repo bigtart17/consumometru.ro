@@ -70,7 +70,7 @@ const baseSeoAppliancePages: SeoAppliancePage[] = [
     h1: "Cat consuma un aer conditionat?",
     shortName: "aer conditionat",
     intro:
-      "Un aer conditionat poate fi un consumator important vara, dar costul real depinde mult de modul in care este folosit. Calculatorul este precompletat pentru un aparat de aproximativ 12000 BTU si poate fi ajustat dupa modelul tau.",
+      "Un aer conditionat de 12000 BTU poate consuma in jur de 180 kWh pe luna daca merge 5 ore pe zi, timp de 30 de zile. La 1,30 lei/kWh, asta inseamna aproximativ 234 lei pe luna. Costul urca in canicula, cand aparatul lucreaza mai mult ca sa tina camera rece.",
     watts: 1200,
     consumptionRange: "aproximativ 0,8-2,0 kWh pe ora, in functie de model si setari",
     hoursPerDay: 5,
@@ -93,7 +93,7 @@ const baseSeoAppliancePages: SeoAppliancePage[] = [
         title: "Cum interpretezi formula pentru aer conditionat",
         paragraphs: [
           "Formula folosita este W / 1000 × ore pe zi × zile pe luna. Pentru un aparat estimat la 1200 W folosit 5 ore pe zi timp de 30 de zile, consumul ajunge la aproximativ 180 kWh pe luna.",
-          "Acest calcul este orientativ. In realitate, un aparat inverter eficient poate consuma mai putin in anumite conditii, iar un aparat vechi, murdar sau subdimensionat pentru camera poate consuma mai mult."
+          "In realitate, un aparat inverter eficient poate consuma mai putin in anumite conditii, iar un aparat vechi, murdar sau subdimensionat pentru camera poate consuma mai mult."
         ]
       },
       {
@@ -114,19 +114,19 @@ const baseSeoAppliancePages: SeoAppliancePage[] = [
     costExamples: [
       {
         title: "Apartament racit seara",
-        description: "Aparatul functioneaza dupa-amiaza si seara, nu toata ziua.",
+        description: "Racire dupa serviciu, cand camera s-a incalzit peste zi.",
         hoursPerDay: 3,
         daysPerMonth: 25
       },
       {
         title: "Utilizare zilnica vara",
-        description: "Scenariu des intalnit in lunile calde, cu folosire constanta.",
+        description: "Aparatul merge zilnic in living sau dormitor in lunile calde.",
         hoursPerDay: 5,
         daysPerMonth: 30
       },
       {
         title: "Canicula si lucru de acasa",
-        description: "Aparatul porneste multe ore pentru confort pe timpul zilei.",
+        description: "Camera trebuie racita si in timpul programului de lucru.",
         hoursPerDay: 8,
         daysPerMonth: 30
       }
@@ -168,7 +168,7 @@ const baseSeoAppliancePages: SeoAppliancePage[] = [
       {
         question: "Pot folosi aerul conditionat pentru incalzire?",
         answer:
-          "Da, multe modele au functie de incalzire. Costul depinde de eficienta aparatului si temperatura exterioara."
+          "Da, multe modele au functie de incalzire. Costul este influentat de eficienta aparatului si de temperatura exterioara."
       }
     ]
   },
@@ -181,7 +181,7 @@ const baseSeoAppliancePages: SeoAppliancePage[] = [
     h1: "Cat consuma un frigider?",
     shortName: "frigider",
     intro:
-      "Frigiderul este pornit permanent, dar nu consuma la putere maxima 24 de ore din 24. Estimarea de mai jos foloseste ore echivalente de functionare a compresorului si poate fi ajustata dupa aparatul tau.",
+      "Un frigider obisnuit poate consuma aproximativ 29 kWh pe luna in scenariul folosit aici. La 1,30 lei/kWh, costul este in jur de 37 lei pe luna. Desi sta in priza permanent, compresorul porneste si se opreste, deci nu consuma la putere maxima toata ziua.",
     watts: preset("frigider").watts,
     hoursPerDay: preset("frigider").hoursPerDay,
     daysPerMonth: 30,
@@ -202,7 +202,7 @@ const baseSeoAppliancePages: SeoAppliancePage[] = [
       {
         title: "Ce inseamna consum lunar pentru un frigider",
         paragraphs: [
-          "Daca folosim o estimare de 120 W si 8 ore echivalente pe zi, consumul ajunge la aproximativ 28,8 kWh pe luna. La 1,30 lei/kWh, costul estimativ este in jur de 37 lei pe luna.",
+          "Daca folosim 120 W si 8 ore echivalente pe zi, consumul ajunge la aproximativ 28,8 kWh pe luna. La 1,30 lei/kWh, costul este in jur de 37 lei pe luna.",
           "Aceasta valoare nu este o promisiune. Eticheta energetica, volumul frigiderului, congelatorul inclus, temperatura din bucatarie si felul in care este folosit pot schimba rezultatul."
         ]
       },
@@ -224,19 +224,19 @@ const baseSeoAppliancePages: SeoAppliancePage[] = [
     costExamples: [
       {
         title: "Frigider eficient",
-        description: "Model modern, bine ventilat, cu usa deschisa rar.",
+        description: "Model nou, cu spatiu in spate pentru ventilatie si usa deschisa rar.",
         hoursPerDay: 6,
         daysPerMonth: 30
       },
       {
         title: "Frigider obisnuit",
-        description: "Scenariu mediu pentru o familie care foloseste aparatul zilnic.",
+        description: "Folosire normala intr-o locuinta unde se gateste si se deschide usa des.",
         hoursPerDay: 8,
         daysPerMonth: 30
       },
       {
         title: "Frigider vechi",
-        description: "Compresorul porneste mai des sau aparatul este tinut intr-o zona calda.",
+        description: "Aparat cu garnituri uzate, gheata sau amplasare langa o sursa de caldura.",
         hoursPerDay: 10,
         daysPerMonth: 30,
         watts: 220
@@ -292,7 +292,7 @@ const baseSeoAppliancePages: SeoAppliancePage[] = [
     h1: "Cat consuma un boiler electric?",
     shortName: "boiler electric",
     intro:
-      "Boilerul electric este adesea unul dintre cei mai mari consumatori din locuinta. Calculatorul este precompletat pentru un boiler uzual de 2000 W si 80 litri, dar poti modifica durata de incalzire si pretul energiei.",
+      "Un boiler electric de 2000 W folosit 2 ore pe zi poate consuma aproximativ 120 kWh pe luna. La 1,30 lei/kWh, costul ajunge la aproximativ 156 lei pe luna. Diferenta apare din dusuri, temperatura setata si cat de des trebuie reincalzita apa.",
     watts: preset("boiler-electric").watts,
     hoursPerDay: preset("boiler-electric").hoursPerDay,
     daysPerMonth: 30,
@@ -335,19 +335,19 @@ const baseSeoAppliancePages: SeoAppliancePage[] = [
     costExamples: [
       {
         title: "O persoana, consum atent",
-        description: "Boilerul incalzeste aproximativ o ora pe zi.",
+        description: "Dusuri scurte si apa calda folosita mai ales seara.",
         hoursPerDay: 1,
         daysPerMonth: 30
       },
       {
         title: "Familie mica",
-        description: "Scenariu mediu cu folosire zilnica pentru dusuri si chiuveta.",
+        description: "Doua persoane folosesc zilnic apa calda pentru dus si bucatarie.",
         hoursPerDay: 2,
         daysPerMonth: 30
       },
       {
         title: "Consum mare de apa calda",
-        description: "Dusuri lungi sau mai multe persoane in locuinta.",
+        description: "Mai multe dusuri pe zi, cada sau temperatura setata foarte sus.",
         hoursPerDay: 4,
         daysPerMonth: 30
       }
@@ -402,7 +402,7 @@ const baseSeoAppliancePages: SeoAppliancePage[] = [
     h1: "Cat consuma un calorifer electric?",
     shortName: "calorifer electric",
     intro:
-      "Caloriferul electric este simplu de folosit, dar poate deveni scump daca incalzeste zilnic o camera. Calculatorul foloseste o putere orientativa de 2000 W si iti arata rapid impactul orelor de functionare.",
+      "Un calorifer electric de 2000 W consuma aproximativ 2 kWh pentru fiecare ora de functionare. Folosit 4 ore pe zi, timp de 30 de zile, ajunge la aproximativ 240 kWh pe luna, adica aproximativ 312 lei la 1,30 lei/kWh. Este comod pentru o camera, dar scump daca devine incalzire principala.",
     watts: preset("calorifer-electric").watts,
     hoursPerDay: preset("calorifer-electric").hoursPerDay,
     daysPerMonth: 30,
@@ -423,7 +423,7 @@ const baseSeoAppliancePages: SeoAppliancePage[] = [
       {
         title: "Cum interpretezi costul lunar",
         paragraphs: [
-          "La 2000 W si 4 ore pe zi, consumul ajunge la aproximativ 240 kWh pe luna. La 1,30 lei/kWh, costul estimativ este de 312 lei pe luna doar pentru acel aparat.",
+          "La 2000 W si 4 ore pe zi, consumul ajunge la aproximativ 240 kWh pe luna. La 1,30 lei/kWh, costul este de 312 lei pe luna doar pentru acel aparat.",
           "Daca il folosesti ocazional, de exemplu doua ore pe zi in 20 de zile, costul scade mult. Calculatorul te ajuta sa vezi diferenta dintre incalzire de completare si incalzire principala."
         ]
       },
@@ -445,19 +445,19 @@ const baseSeoAppliancePages: SeoAppliancePage[] = [
     costExamples: [
       {
         title: "Camera incalzita ocazional",
-        description: "Aparatul completeaza incalzirea in zile reci.",
+        description: "Aparatul este pornit doar in zilele reci, pentru cateva ore.",
         hoursPerDay: 2,
         daysPerMonth: 20
       },
       {
         title: "Folosire zilnica seara",
-        description: "Caloriferul functioneaza cateva ore dupa-amiaza si seara.",
+        description: "Camera este incalzita dupa-amiaza si seara, cand esti acasa.",
         hoursPerDay: 4,
         daysPerMonth: 30
       },
       {
         title: "Incalzire principala",
-        description: "Scenariu costisitor, cu functionare multe ore in fiecare zi.",
+        description: "Caloriferul tine loc de sursa principala de caldura intr-o camera.",
         hoursPerDay: 8,
         daysPerMonth: 30
       }
@@ -512,7 +512,7 @@ const baseSeoAppliancePages: SeoAppliancePage[] = [
     h1: "Cat consuma un PC gaming?",
     shortName: "PC gaming",
     intro:
-      "Un PC gaming poate consuma foarte diferit in functie de placa video, procesor si jocurile rulate. Calculatorul foloseste o estimare de 550 W pentru sistem, fara monitor, si poate fi ajustat manual.",
+      "Un PC gaming calculat la 550 W consuma aproximativ 66 kWh pe luna daca este folosit 4 ore pe zi, 30 de zile. La 1,30 lei/kWh, costul este in jur de 86 lei pe luna, fara monitor. In jocuri solicitante consumul creste, iar in browsing sau filme scade mult.",
     watts: preset("pc-gaming").watts,
     hoursPerDay: preset("pc-gaming").hoursPerDay,
     daysPerMonth: 30,
@@ -527,27 +527,27 @@ const baseSeoAppliancePages: SeoAppliancePage[] = [
         title: "De ce un PC gaming nu consuma constant",
         paragraphs: [
           "Consumul unui PC gaming creste mult in jocuri, randare sau streaming si scade in browsing, filme sau idle. Placa video este de obicei componenta care schimba cel mai mult consumul total.",
-          "Sursa de 750 W nu inseamna ca PC-ul consuma 750 W permanent. Aceasta este capacitatea maxima pe care sursa o poate livra. Consumul real depinde de componente si de sarcina din acel moment."
+          "Sursa de 750 W nu inseamna ca PC-ul consuma 750 W permanent. Aceasta este capacitatea maxima pe care sursa o poate livra. Consumul real este dat de componente si de sarcina din acel moment."
         ]
       },
       {
         title: "Ce include estimarea de 550 W",
         paragraphs: [
           "Valoarea de 550 W este o estimare pentru un sistem performant in sarcina, nu pentru orice PC. Un sistem entry-level poate consuma mult mai putin, iar un PC high-end cu placa video puternica poate depasi aceasta valoare.",
-          "Monitorul, boxele, routerul, luminile RGB externe sau consola de captură nu sunt incluse automat. Pentru o estimare completa, adauga separat fiecare aparat in simulatorul de factura lunara."
+          "Monitorul, boxele, routerul, luminile RGB externe sau consola de captura nu sunt incluse automat. Pentru un calcul complet, adauga separat fiecare aparat in simulatorul de factura lunara."
         ]
       },
       {
         title: "Cum se traduce gamingul in cost lunar",
         paragraphs: [
-          "La 550 W si 4 ore pe zi, consumul ajunge la aproximativ 66 kWh pe luna. La 1,30 lei/kWh, costul estimativ este in jur de 86 lei pe luna pentru unitatea PC.",
+          "La 550 W si 4 ore pe zi, consumul ajunge la aproximativ 66 kWh pe luna. La 1,30 lei/kWh, costul este in jur de 86 lei pe luna pentru unitatea PC.",
           "Daca joci doar in weekend, costul poate fi mult mai mic. Daca PC-ul ramane pornit zilnic pentru download, streaming sau lucrari grafice, consumul creste chiar daca nu esti mereu in joc."
         ]
       },
       {
         title: "Cand merita comparat cu laptop sau consola",
         paragraphs: [
-          "Un laptop consuma de obicei mai putin decat un desktop gaming, dar are alta performanta si alta experienta. O consola poate fi mai eficienta in unele jocuri, insa depinde de televizorul folosit.",
+          "Un laptop consuma de obicei mai putin decat un desktop gaming, dar are alta performanta si alta experienta. O consola poate fi mai eficienta in unele jocuri, iar televizorul folosit poate schimba totalul.",
           "Comparatia este utila daca folosesti sistemul multe ore pe zi. Diferenta de consum poate conta pentru cine lucreaza si se joaca pe acelasi PC, mai ales intr-o locuinta cu mai multe dispozitive pornite."
         ]
       }
@@ -555,19 +555,19 @@ const baseSeoAppliancePages: SeoAppliancePage[] = [
     costExamples: [
       {
         title: "Gaming in weekend",
-        description: "Doua ore pe zi in aproximativ 12 zile pe luna.",
+        description: "Sesiuni scurte vineri, sambata si duminica, fara PC pornit zilnic.",
         hoursPerDay: 2,
         daysPerMonth: 12
       },
       {
         title: "Gaming zilnic",
-        description: "Patru ore de jocuri sau sarcini grafice in fiecare zi.",
+        description: "Jocuri seara dupa scoala sau serviciu, aproape in fiecare zi.",
         hoursPerDay: 4,
         daysPerMonth: 30
       },
       {
         title: "PC high-end",
-        description: "Sistem mai puternic, folosit intens pentru jocuri si streaming.",
+        description: "Placa video puternica, jocuri grele si streaming sau randare.",
         watts: 750,
         hoursPerDay: 5,
         daysPerMonth: 30
@@ -623,7 +623,7 @@ const baseSeoAppliancePages: SeoAppliancePage[] = [
     h1: "Cat consuma un televizor?",
     shortName: "televizor",
     intro:
-      "Televizorul nu este de obicei cel mai mare consumator din casa, dar poate conta daca este pornit multe ore pe zi. Estimarea foloseste un televizor LED modern de 90 W.",
+      "Un televizor LED de 90 W folosit 4 ore pe zi consuma aproximativ 10,8 kWh pe luna. La 1,30 lei/kWh, costul este aproximativ 14 lei pe luna. Nu este de obicei un mare consumator, dar conteaza daca ramane pornit toata ziua sau are consola si soundbar langa el.",
     watts: preset("televizor").watts,
     hoursPerDay: preset("televizor").hoursPerDay,
     daysPerMonth: 30,
@@ -637,14 +637,14 @@ const baseSeoAppliancePages: SeoAppliancePage[] = [
       {
         title: "Ce influenteaza consumul unui televizor",
         paragraphs: [
-          "Consumul depinde de diagonala, tehnologia ecranului, luminozitate si modul de imagine. Un televizor mare, setat pe luminozitate maxima, consuma mai mult decat unul mai mic folosit in mod eco.",
+          "Diagonala, tehnologia ecranului, luminozitatea si modul de imagine schimba mult consumul unui televizor. Un televizor mare, setat pe luminozitate maxima, consuma mai mult decat unul mai mic folosit in mod eco.",
           "Smart TV-ul mai consuma si in stand-by, de obicei putin, dar permanent. Daca ai si soundbar, consola, receiver sau media box, costul total al zonei TV poate fi mai mare decat consumul televizorului singur."
         ]
       },
       {
         title: "Cum calculezi costul lunar",
         paragraphs: [
-          "Pentru un televizor de 90 W folosit 4 ore pe zi, consumul este de aproximativ 10,8 kWh pe luna. La 1,30 lei/kWh, costul estimativ este de aproximativ 14 lei pe luna.",
+          "Pentru un televizor de 90 W folosit 4 ore pe zi, consumul este de aproximativ 10,8 kWh pe luna. La 1,30 lei/kWh, costul este de aproximativ 14 lei pe luna.",
           "Daca televizorul ramane pornit ca fundal multe ore, consumul se dubleaza sau chiar se tripleaza. Timpul de utilizare este mai important decat diferenta dintre doua moduri de imagine."
         ]
       },
@@ -666,19 +666,19 @@ const baseSeoAppliancePages: SeoAppliancePage[] = [
     costExamples: [
       {
         title: "Filme seara",
-        description: "Televizor folosit aproximativ doua ore pe zi.",
+        description: "Televizor pornit seara pentru un film, un meci sau un episod.",
         hoursPerDay: 2,
         daysPerMonth: 30
       },
       {
         title: "Folosire zilnica normala",
-        description: "Patru ore pe zi pentru stiri, filme si streaming.",
+        description: "Stiri, streaming si cateva ore de relaxare in fiecare zi.",
         hoursPerDay: 4,
         daysPerMonth: 30
       },
       {
         title: "TV pornit multe ore",
-        description: "Televizor lasat deschis ca fundal in timpul zilei.",
+        description: "Televizorul ramane deschis in fundal, chiar si cand nu te uiti atent.",
         hoursPerDay: 8,
         daysPerMonth: 30
       }
@@ -733,7 +733,7 @@ const baseSeoAppliancePages: SeoAppliancePage[] = [
     h1: "Cat consuma o masina de spalat?",
     shortName: "masina de spalat",
     intro:
-      "Masina de spalat consuma diferit in functie de program, temperatura apei si numarul de cicluri. Calculatorul este precompletat cu o estimare medie si poate fi ajustat dupa rutina ta.",
+      "O masina de spalat folosita de 16 ori pe luna, cate o ora, poate consuma aproximativ 11,2 kWh in scenariul de aici. La 1,30 lei/kWh, costul electric este in jur de 15 lei pe luna. Diferenta reala vine mai ales din temperatura apei si din cate cicluri faci intr-o luna.",
     watts: preset("masina-de-spalat").watts,
     hoursPerDay: preset("masina-de-spalat").hoursPerDay,
     daysPerMonth: 16,
@@ -754,7 +754,7 @@ const baseSeoAppliancePages: SeoAppliancePage[] = [
       {
         title: "Cum estimezi costul lunar",
         paragraphs: [
-          "Daca folosim 700 W pentru o ora si 16 spalari pe luna, consumul ajunge la aproximativ 11,2 kWh. La 1,30 lei/kWh, costul estimativ este in jur de 15 lei pe luna.",
+          "Daca folosim 700 W pentru o ora si 16 spalari pe luna, consumul ajunge la aproximativ 11,2 kWh. La 1,30 lei/kWh, costul este in jur de 15 lei pe luna.",
           "In practica, unele cicluri consuma mai putin, altele mai mult. Pentru o estimare mai apropiata, poti folosi durata programului tau obisnuit si numarul real de spalari dintr-o luna."
         ]
       },
@@ -776,19 +776,19 @@ const baseSeoAppliancePages: SeoAppliancePage[] = [
     costExamples: [
       {
         title: "Doua spalari pe saptamana",
-        description: "Rutina usoara pentru o persoana sau cuplu.",
+        description: "Haine putine, programe scurte si cos de rufe umplut treptat.",
         hoursPerDay: 1,
         daysPerMonth: 8
       },
       {
         title: "Familie, spalari regulate",
-        description: "Aproximativ patru cicluri de spalare pe saptamana.",
+        description: "Patru cicluri pe saptamana pentru haine, prosoape si lenjerii.",
         hoursPerDay: 1,
         daysPerMonth: 16
       },
       {
         title: "Programe lungi si dese",
-        description: "Mai multe cicluri si durate mai mari, cu haine multe.",
+        description: "Spalari dese, programe calde si incarcare mare de rufe.",
         hoursPerDay: 1.5,
         daysPerMonth: 24
       }
@@ -843,7 +843,7 @@ const baseSeoAppliancePages: SeoAppliancePage[] = [
     h1: "Cat consuma un uscator de rufe?",
     shortName: "uscator de rufe",
     intro:
-      "Uscatorul de rufe poate fi foarte comod, dar consumul depinde mult de tehnologie si de cat de des il folosesti. Estimarea foloseste un uscator clasic de 2500 W.",
+      "Un uscator de rufe de 2500 W folosit o ora consuma aproximativ 2,5 kWh. Daca il folosesti de 12 ori pe luna, ajunge la aproximativ 30 kWh, adica in jur de 39 lei la 1,30 lei/kWh. Costul creste repede cand usuci rufe dupa aproape fiecare spalare.",
     watts: preset("uscator-rufe").watts,
     hoursPerDay: preset("uscator-rufe").hoursPerDay,
     daysPerMonth: 12,
@@ -864,7 +864,7 @@ const baseSeoAppliancePages: SeoAppliancePage[] = [
       {
         title: "Cum estimezi costul unui ciclu",
         paragraphs: [
-          "La 2500 W, o ora de functionare inseamna aproximativ 2,5 kWh. Daca folosesti uscatorul de 12 ori pe luna cate o ora, consumul estimativ este de 30 kWh lunar.",
+          "La 2500 W, o ora de functionare inseamna aproximativ 2,5 kWh. Daca folosesti uscatorul de 12 ori pe luna cate o ora, consumul este de 30 kWh lunar.",
           "La 1,30 lei/kWh, acest scenariu ajunge la aproximativ 39 lei pe luna. Pentru cicluri de 90 de minute sau folosire frecventa, costul urca vizibil."
         ]
       },
@@ -886,19 +886,19 @@ const baseSeoAppliancePages: SeoAppliancePage[] = [
     costExamples: [
       {
         title: "Cateva cicluri pe luna",
-        description: "Uscator folosit doar cand vremea nu permite uscarea naturala.",
+        description: "Il pornesti doar iarna, pe ploaie sau cand ai nevoie rapid de haine uscate.",
         hoursPerDay: 1,
         daysPerMonth: 6
       },
       {
         title: "Folosire saptamanala",
-        description: "Aproximativ trei cicluri pe saptamana.",
+        description: "Trei incarcari pe saptamana pentru prosoape, haine sau lenjerii.",
         hoursPerDay: 1,
         daysPerMonth: 12
       },
       {
         title: "Familie, utilizare frecventa",
-        description: "Cicluri mai lungi si multe rufe in fiecare luna.",
+        description: "Rufe multe, cicluri mai lungi si uscator folosit dupa spalari dese.",
         hoursPerDay: 1.5,
         daysPerMonth: 20
       }
@@ -940,7 +940,7 @@ const baseSeoAppliancePages: SeoAppliancePage[] = [
       {
         question: "Merita uscatorul daca il folosesc rar?",
         answer:
-          "Costul lunar poate fi moderat daca este folosit ocazional, dar depinde de durata ciclurilor."
+          "Costul lunar poate fi moderat daca este folosit ocazional, iar durata ciclurilor ramane factorul principal."
       }
     ]
   },
@@ -953,7 +953,7 @@ const baseSeoAppliancePages: SeoAppliancePage[] = [
     h1: "Cat consuma un cuptor electric?",
     shortName: "cuptor electric",
     intro:
-      "Cuptorul electric are putere mare, dar rezistentele nu functioneaza permanent la putere maxima. Calculatorul foloseste 2200 W si o durata orientativa de 45 de minute.",
+      "Un cuptor electric de 2200 W folosit 45 de minute poate consuma aproximativ 1,65 kWh pentru o utilizare. Daca il folosesti de 20 de ori pe luna, ajunge la aproximativ 33 kWh, adica in jur de 43 lei la 1,30 lei/kWh. Retetele lungi, preincalzirea si temperaturile mari cresc costul.",
     watts: preset("cuptor-electric").watts,
     hoursPerDay: preset("cuptor-electric").hoursPerDay,
     daysPerMonth: 20,
@@ -967,7 +967,7 @@ const baseSeoAppliancePages: SeoAppliancePage[] = [
       {
         title: "De ce puterea cuptorului nu spune tot",
         paragraphs: [
-          "Un cuptor electric poate avea 2000-2500 W, dar termostatul porneste si opreste rezistentele pentru a mentine temperatura. De aceea, consumul real depinde de reteta, temperatura si durata.",
+          "Un cuptor electric poate avea 2000-2500 W, dar termostatul porneste si opreste rezistentele pentru a mentine temperatura. De aceea, reteta, temperatura si durata schimba mult consumul real.",
           "Preincalzirea consuma energie inainte ca mancarea sa intre in cuptor. Pentru unele retete este necesara, pentru altele poate fi redusa sau evitata, in functie de recomandarea retetei."
         ]
       },
@@ -982,7 +982,7 @@ const baseSeoAppliancePages: SeoAppliancePage[] = [
         title: "Ce creste consumul cuptorului",
         paragraphs: [
           "Deschiderea usii in timpul gatitului pierde caldura si poate face rezistentele sa porneasca din nou. Vasele reci, cantitatile mari si temperatura foarte ridicata pot prelungi timpul necesar.",
-          "Functia de convectie poate ajuta in unele cazuri, deoarece distribuie mai bine caldura. Totusi, rezultatul depinde de reteta si de modul in care este folosit cuptorul."
+          "Functia de convectie poate ajuta in unele cazuri, deoarece distribuie mai bine caldura. Totusi, reteta si modul de folosire raman decisive."
         ]
       },
       {
@@ -996,19 +996,19 @@ const baseSeoAppliancePages: SeoAppliancePage[] = [
     costExamples: [
       {
         title: "Gatit ocazional",
-        description: "Cuptor folosit de cateva ori pe luna pentru retete scurte.",
+        description: "Tavi rapide, pizza sau legume la cuptor de cateva ori pe luna.",
         hoursPerDay: 0.75,
         daysPerMonth: 8
       },
       {
         title: "Gatit de cateva ori pe saptamana",
-        description: "Scenariu obisnuit pentru mese pregatite acasa.",
+        description: "Friptura, prajituri sau mancare gatita acasa de cateva ori pe saptamana.",
         hoursPerDay: 0.75,
         daysPerMonth: 20
       },
       {
         title: "Gatit zilnic",
-        description: "Cuptor folosit aproape in fiecare zi, aproximativ o ora.",
+        description: "Cuptorul intra in rutina zilnica pentru cina sau meal prep.",
         hoursPerDay: 1,
         daysPerMonth: 30
       }
@@ -1063,7 +1063,7 @@ const baseSeoAppliancePages: SeoAppliancePage[] = [
     h1: "Cat consuma un bec LED?",
     shortName: "bec LED",
     intro:
-      "Un bec LED consuma putin, dar calculul devine interesant cand ai multe becuri aprinse zilnic. Calculatorul foloseste un bec LED de 10 W si poate fi ajustat dupa puterea de pe ambalaj.",
+      "Un bec LED de 10 W folosit 6 ore pe zi consuma aproximativ 1,8 kWh pe luna. La 1,30 lei/kWh, costul este putin peste 2 lei pe luna pentru un singur bec. Diferenta devine vizibila cand ai multe becuri aprinse seara sau cand inlocuiesti becuri incandescente.",
     watts: preset("bec-led").watts,
     hoursPerDay: preset("bec-led").hoursPerDay,
     daysPerMonth: 30,
@@ -1077,7 +1077,7 @@ const baseSeoAppliancePages: SeoAppliancePage[] = [
       {
         title: "De ce becurile LED au cost mic",
         paragraphs: [
-          "Un bec LED de 10 W folosit 6 ore pe zi consuma doar 1,8 kWh pe luna. La 1,30 lei/kWh, costul estimativ este putin peste 2 lei pe luna pentru un singur bec.",
+          "Un bec LED de 10 W folosit 6 ore pe zi consuma doar 1,8 kWh pe luna. La 1,30 lei/kWh, costul este putin peste 2 lei pe luna pentru un singur bec.",
           "Diferenta fata de un bec incandescent apare din eficienta. Pentru lumina similara, un LED poate folosi de cateva ori mai putina energie, ceea ce conteaza mai ales in camerele folosite zilnic."
         ]
       },
@@ -1106,19 +1106,19 @@ const baseSeoAppliancePages: SeoAppliancePage[] = [
     costExamples: [
       {
         title: "Bec aprins putin",
-        description: "Doua ore pe zi intr-un hol sau baie.",
+        description: "Lumina folosita scurt, de exemplu in baie, hol sau debara.",
         hoursPerDay: 2,
         daysPerMonth: 30
       },
       {
         title: "Camera folosita zilnic",
-        description: "Sase ore pe zi seara sau in sezonul rece.",
+        description: "Bec aprins seara in sufragerie, dormitor sau birou.",
         hoursPerDay: 6,
         daysPerMonth: 30
       },
       {
         title: "Comparatie cu incandescent",
-        description: "Acelasi program, dar pentru un bec incandescent de 60 W.",
+        description: "Acelasi timp de folosire, dar cu un bec vechi de 60 W.",
         watts: 60,
         hoursPerDay: 6,
         daysPerMonth: 30

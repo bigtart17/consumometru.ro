@@ -4,12 +4,24 @@ import { LegalPage } from "@/components/legal-page";
 export const metadata: Metadata = {
   title: "Politica de cookies",
   description:
-    "Politica de cookies pentru Consumometru: cookies necesare, analytics, marketing, Google AdSense si Google Consent Mode v2."
+    "Politica de cookies pentru Consumometru: cookies necesare, analytics, marketing, Google AdSense si Google Consent Mode v2.",
+  alternates: {
+    canonical: "/cookies"
+  },
+  openGraph: {
+    title: "Politica de cookies",
+    description:
+      "Afla ce cookies foloseste Consumometru si cum sunt tratate analytics, marketing, AdSense si Consent Mode v2.",
+    url: "/cookies",
+    type: "article",
+    locale: "ro_RO"
+  }
 };
 
 export default function CookiesPage() {
   return (
     <LegalPage
+      breadcrumbPath="/cookies"
       title="Politica de cookies"
       intro="Aceasta pagina explica ce tipuri de cookies si tehnologii similare pot fi folosite pe Consumometru. Cookies necesare ajuta site-ul sa functioneze, iar cookies analytics si marketing se activeaza doar in functie de optiunile tale."
       sections={[

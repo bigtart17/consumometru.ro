@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { MobileFooterAccordion } from "@/components/mobile-footer-accordion";
+import { siteNavigationPillars } from "@/data/siteNavigation";
 import { siteConfig } from "@/lib/site";
 
 export type FooterLink = {
@@ -14,78 +15,65 @@ export type FooterSection = {
 
 const footerSections: FooterSection[] = [
   {
-    title: "Calculatoare",
+    title: "Calculeaza",
     links: [
-      { href: "/#calculator", label: "Calculator consum" },
-      { href: "/#navigare-rapida", label: "Navigare rapida" },
+      { href: "/#calculator", label: "Calculator consum electric" },
+      { href: getPillarHref("calculeaza"), label: "Calculatoare consum electric" },
       { href: "/#simulator-factura", label: "Simulator factura" },
-      { href: "/comparatii", label: "Comparatii consum" },
-      { href: "/#top-consumatori", label: "Top consumatori" },
-      { href: "/#faq", label: "FAQ" }
+      { href: "/cat-costa/1-kwh", label: "Cost 1 kWh" },
+      { href: "/consum-locuinta/apartament-2-camere", label: "Consum locuinta" }
     ]
   },
   {
-    title: "Categorii consum",
+    title: "Aparate",
     links: [
+      { href: getPillarHref("aparate"), label: "Aparate" },
       { href: "/climatizare", label: "Climatizare" },
       { href: "/incalzire-electrica", label: "Incalzire electrica" },
       { href: "/electrocasnice", label: "Electrocasnice" },
       { href: "/electronice", label: "Electronice" },
-      { href: "/iluminat", label: "Iluminat" },
-      { href: "/eficienta-energetica", label: "Eficienta energetica" }
+      { href: "/iluminat", label: "Iluminat" }
+    ]
+  },
+  {
+    title: "Comparatii",
+    links: [
+      { href: getPillarHref("comparatii"), label: "Comparatii consum" },
+      {
+        href: "/comparatii/calorifer-electric-vs-aer-conditionat",
+        label: "Aer conditionat vs calorifer electric"
+      },
+      { href: "/comparatii/laptop-vs-desktop", label: "Laptop vs desktop" },
+      {
+        href: "/comparatii/boiler-electric-vs-instant",
+        label: "Boiler electric vs instant"
+      },
+      {
+        href: "/comparatii/bec-led-vs-bec-incandescent",
+        label: "Bec LED vs bec incandescent"
+      }
     ]
   },
   {
     title: "Ghiduri",
     links: [
-      { href: "/cat-costa/1-kwh", label: "Cat costa 1 kWh" },
+      { href: getPillarHref("ghiduri"), label: "Ghiduri" },
       { href: "/ghiduri/cum-citesti-factura-la-curent", label: "Cum citesti factura" },
-      { href: "/consum-locuinta/apartament-2-camere", label: "Consum apartament 2 camere" },
-      { href: "/consum-locuinta/casa", label: "Consum casa" },
-      { href: "/cat-consuma/aer-conditionat-12000-btu", label: "Consum aer conditionat" },
-      { href: "/cat-consuma/boiler-electric-80l", label: "Consum boiler" },
-      { href: "/cat-consuma/calorifer-electric", label: "Consum calorifer electric" },
-      { href: "/cat-consuma/frigider", label: "Consum frigider" },
-      { href: "/cat-consuma/uscator-rufe", label: "Consum uscator rufe" },
-      { href: "/cat-consuma/cuptor-electric", label: "Consum cuptor electric" },
-      { href: "/cat-consuma/televizor", label: "Consum televizor" },
-      { href: "/cat-consuma/masina-de-spalat", label: "Consum masina de spalat" }
-    ]
-  },
-  {
-    title: "Despre",
-    links: [
-      { href: "/despre", label: "Despre proiect" },
+      { href: "/eficienta-energetica", label: "Eficienta energetica" },
       { href: "/metodologie", label: "Metodologie" },
       { href: "/surse", label: "Surse" },
-      { href: "/contact", label: "Contact" }
+      { href: "/despre", label: "Despre" }
     ]
   },
   {
     title: "Legal",
     links: [
+      { href: "/contact", label: "Contact" },
       { href: "/confidentialitate", label: "Confidentialitate" },
       { href: "/cookies", label: "Cookies" },
       { href: "/termeni", label: "Termeni" },
       { href: "/gdpr", label: "GDPR" }
     ]
-  }
-];
-
-const desktopFooterSections: FooterSection[] = [
-  footerSections[0],
-  footerSections[1],
-  {
-    title: "Aparate mari",
-    links: footerSections[2].links.slice(4, 10)
-  },
-  {
-    title: "Ghiduri utile",
-    links: footerSections[2].links.slice(0, 4).concat(footerSections[2].links.slice(10))
-  },
-  {
-    title: "Site",
-    links: footerSections[3].links.concat(footerSections[4].links)
   }
 ];
 
@@ -99,8 +87,8 @@ export function SiteFooter() {
           </p>
           <p className="mt-3 max-w-sm leading-6">
             Calculator si ghiduri in romana pentru estimarea consumului electric
-            al aparatelor din casa. Valorile sunt orientative si te ajuta sa
-            compari scenarii, nu inlocuiesc factura.
+            al aparatelor din casa. Te ajuta sa compari scenarii si sa intelegi
+            mai bine factura, fara sa inlocuiasca datele furnizorului.
           </p>
         </div>
         <MobileFooterAccordion sections={footerSections} />
@@ -113,12 +101,12 @@ export function SiteFooter() {
           </p>
           <p className="mt-3 max-w-sm leading-6">
             Calculator si ghiduri in romana pentru estimarea consumului electric
-            al aparatelor din casa. Valorile sunt orientative si te ajuta sa
-            compari scenarii, nu inlocuiesc factura.
+            al aparatelor din casa. Te ajuta sa compari scenarii si sa intelegi
+            mai bine factura, fara sa inlocuiasca datele furnizorului.
           </p>
         </div>
 
-        {desktopFooterSections.map((section) => (
+        {footerSections.map((section) => (
           <FooterColumn
             key={section.title}
             title={section.title}
@@ -128,11 +116,15 @@ export function SiteFooter() {
       </div>
       <div className="mx-auto mt-8 max-w-7xl border-t border-emerald-100 pt-4 text-xs leading-5 text-slate-500">
         © {new Date().getFullYear()} {siteConfig.name}.
-        Estimarile sunt informative si pot varia in functie de aparat, setari,
+        Calculele sunt informative; rezultatul final tine de aparat, setari,
         instalatie si pretul real al energiei.
       </div>
     </footer>
   );
+}
+
+function getPillarHref(key: "calculeaza" | "aparate" | "comparatii" | "ghiduri") {
+  return siteNavigationPillars.find((pillar) => pillar.key === key)?.href ?? "/";
 }
 
 type FooterColumnProps = {

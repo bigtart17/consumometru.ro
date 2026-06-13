@@ -57,39 +57,39 @@ export const seoHubs: SeoHub[] = [
     h1: "Consum aparate de climatizare",
     eyebrow: "Climatizare",
     intro: [
-      "Aparatele de climatizare pot schimba rapid confortul din locuinta, dar si consumul lunar de energie. Vara, aerul conditionat este de obicei cel mai important consumator din aceasta categorie, mai ales daca functioneaza multe ore pe zi sau daca temperatura setata este foarte joasa. Un ventilator consuma mult mai putin, dar nu raceste aerul, ci doar creeaza senzatia de circulatie. Dezumidificatorul si purificatorul de aer au consumuri diferite, in functie de capacitate, treapta si durata zilnica de functionare.",
-      "Hub-ul acesta aduna calculele si explicatiile utile pentru aparatele folosite la racire, circularea aerului si imbunatatirea calitatii aerului din casa. Scopul nu este sa iti spuna o valoare fixa pentru orice locuinta, ci sa iti arate cum influenteaza puterea in W, numarul de ore si pretul kWh costul lunar. Daca ai eticheta aparatului sau manualul, introdu manual puterea in calculator. Daca nu, poti porni de la valorile orientative si apoi sa ajustezi scenariul dupa modul tau real de utilizare.",
-      "Pentru costuri mai mici vara, conteaza setarea temperaturii, izolarea camerei, folosirea jaluzelelor sau perdelelor in orele fierbinti si curatarea filtrelor. Un aparat intretinut si folosit realist poate consuma mai previzibil decat unul lasat sa functioneze continuu la setari extreme."
+      "Aici gasesti aparatele care schimba confortul vara: aer conditionat, ventilator, dezumidificator si purificator de aer. Aerul conditionat poate deveni principalul consumator cand merge zilnic mai multe ore, mai ales in camere insorite sau slab izolate. Ventilatorul consuma mult mai putin, dar nu raceste aerul; doar il misca si face caldura mai suportabila.",
+      "Pentru fiecare aparat conteaza aceleasi lucruri simple: puterea in W, cate ore il tii pornit si pretul kWh din factura. Un aer conditionat folosit 5 ore pe zi poate adauga zeci sau sute de kWh intr-o luna calda, in timp ce un ventilator lasat peste noapte ramane de obicei un cost mic. Daca ai eticheta aparatului, introdu puterea reala in calculator.",
+      "Poti economisi cel mai mult reducand orele in care aparatul lucreaza greu. Seteaza aerul conditionat la 24-26 de grade, trage jaluzelele in orele cu soare direct, inchide usa camerei racite si curata filtrele. O camera umbrita si un aparat intretinut cer mai putina energie pentru acelasi confort."
     ],
     items: [
-      guide("Aer conditionat", "aer-conditionat-12000-btu", "Calculator precompletat pentru un aparat de aer conditionat uzual, cu exemple de cost lunar."),
-      guide("Ventilator", "ventilator", "Consum redus fata de aerul conditionat, util pentru scenarii de folosire zilnica in zile calde."),
-      guide("Dezumidificator", "dezumidificator", "Consum variabil in functie de capacitate, umiditate si numarul de ore de functionare."),
-      calculator("Purificator de aer", "Aparat cu putere moderata, dar care poate functiona multe ore pe zi.")
+      guide("Aer conditionat", "aer-conditionat-12000-btu", "Vezi cat poate costa racirea unei camere in zile obisnuite si in perioade de canicula."),
+      guide("Ventilator", "ventilator", "Compara un consum mic, dar repetat zilnic, cu racirea activa oferita de aerul conditionat."),
+      guide("Dezumidificator", "dezumidificator", "Calculeaza costul pentru camere umede, bai, subsoluri sau locuinte aerisite greu."),
+      calculator("Purificator de aer", "Merita calculat separat daca ramane pornit multe ore pe zi, chiar daca are putere moderata.")
     ],
     tipsTitle: "Cum reduci consumul vara",
     tips: [
-      "Seteaza aerul conditionat la o temperatura realista, de exemplu 24-26 de grade, in loc de valori foarte joase.",
-      "Raceste camera inainte de varful de caldura si limiteaza intrarea aerului fierbinte prin perdele, rulouri sau jaluzele.",
-      "Curata filtrele aparatelor de climatizare; un filtru incarcat poate reduce eficienta si confortul.",
-      "Foloseste ventilatorul atunci cand ai nevoie doar de circularea aerului, nu de racire activa."
+      "Seteaza aerul conditionat la 24-26 de grade. Diferenta fata de 19-20 de grade se vede in orele de lucru ale compresorului.",
+      "Umbreste camera inainte sa se incinga. Perdelele, rulourile sau jaluzelele pot reduce timpul de racire.",
+      "Curata filtrele. Un filtru incarcat lasa aerul sa circule mai greu si aparatul lucreaza mai mult.",
+      "Foloseste ventilatorul cand ai nevoie doar de circularea aerului, nu de racire reala."
     ],
     relatedHubSlugs: ["eficienta-energetica"],
     faq: [
       {
         question: "Ce consuma mai mult, aerul conditionat sau ventilatorul?",
         answer:
-          "Aerul conditionat consuma de obicei mult mai mult, deoarece raceste activ aerul. Ventilatorul are putere mai mica, dar nu scade temperatura camerei."
+          "Aerul conditionat consuma mai mult pentru ca raceste efectiv camera. Ventilatorul are putere mica si poate fi ieftin de folosit, dar nu scade temperatura aerului."
       },
       {
         question: "De ce variaza consumul aerului conditionat?",
         answer:
-          "Consumul depinde de temperatura setata, izolatia camerei, temperatura exterioara, marimea aparatului si daca modelul este inverter."
+          "Conteaza temperatura setata, soarele direct, izolatia, marimea camerei si starea filtrelor. Un aparat inverter poate reduce puterea dupa ce camera s-a racit."
       },
       {
         question: "Pot calcula un dezumidificator daca nu are pagina dedicata?",
         answer:
-          "Da. Introdu puterea in W, orele de functionare si pretul kWh in calculatorul principal pentru o estimare rapida."
+          "Da. Foloseste puterea in W de pe eticheta, estimeaza cate ore merge pe zi si introdu pretul kWh din factura."
       }
     ]
   },
@@ -101,41 +101,41 @@ export const seoHubs: SeoHub[] = [
     h1: "Consum aparate de incalzire electrica",
     eyebrow: "Incalzire electrica",
     intro: [
-      "Aparatele de incalzire electrica sunt printre cele mai importante surse de consum dintr-o locuinta, pentru ca multe dintre ele au puteri mari: 1500 W, 2000 W sau chiar mai mult. Diferenta dintre un aparat folosit ocazional si unul folosit zilnic se vede imediat in kWh. Un calorifer electric de 2000 W folosit patru ore pe zi poate avea un impact mult mai mare decat un televizor sau un laptop folosit multe ore.",
-      "Acest hub grupeaza aparatele folosite pentru incalzirea camerei si a apei, cu linkuri catre ghidurile deja disponibile si cu puncte de plecare pentru aparatele care pot fi calculate manual. Boilerul electric depinde mult de temperatura setata, izolarea rezervorului si consumul de apa calda. Caloriferul, convectorul, aeroterma si radiatorul cu ulei depind de durata de functionare, dimensiunea camerei, izolatie si pierderile de caldura.",
-      "Pentru o estimare corecta, nu te uita doar la puterea aparatului. Timpul de utilizare este la fel de important. Un aparat puternic folosit scurt poate costa mai putin decat unul moderat lasat pornit toata ziua. Calculatorul principal te ajuta sa testezi scenarii concrete: doua ore pe zi, patru ore pe zi, zile putine pe luna sau utilizare zilnica in sezonul rece."
+      "Incalzirea electrica merita verificata prima atunci cand factura creste iarna. Multe aparate din aceasta categorie au 1500-2000 W sau mai mult, iar cateva ore pe zi pot insemna sute de kWh intr-o luna rece. Un calorifer electric de 2000 W folosit patru ore pe zi consuma mult mai mult decat un laptop, un televizor sau iluminatul obisnuit.",
+      "Aici gasesti boilerul electric, caloriferul, convectorul, aeroterma, radiatorul cu ulei si panoul radiant. Boilerul tine de apa calda: temperatura setata, izolarea rezervorului si numarul de dusuri conteaza enorm. Aparatele pentru camera depind de dimensiunea spatiului, pierderile de caldura si cat timp ramane rezistenta alimentata.",
+      "Poti economisi mai ales din orele de functionare si din pierderile de caldura. Un aparat puternic folosit o ora poate costa mai putin decat unul lasat pornit toata seara. Testeaza scenarii simple: doua ore pe zi, patru ore pe zi, doar in zilele reci sau doar in camera folosita."
     ],
     items: [
-      guide("Boiler electric", "boiler-electric-80l", "Estimare pentru incalzirea apei cu boiler electric si exemple de cost lunar."),
-      guide("Calorifer electric", "calorifer-electric", "Ghid pentru unul dintre cei mai vizibili consumatori de iarna."),
-      guide("Convector electric", "convector-electric", "Aparat de incalzire cu putere mare, potrivit pentru calcul dupa eticheta."),
-      guide("Aeroterma", "aeroterma", "Consum ridicat cand functioneaza continuu, util de estimat inainte de folosire zilnica."),
-      guide("Radiator cu ulei", "radiator-ulei", "Consum similar cu alte aparate rezistive, influentat de termostat si durata."),
-      guide("Panou radiant", "panou-radiant", "Consum dependent de putere, suprafata acoperita si durata de functionare.")
+      guide("Boiler electric", "boiler-electric-80l", "Vezi cat costa apa calda cand boilerul incalzeste zilnic."),
+      guide("Calorifer electric", "calorifer-electric", "Calculeaza impactul unui aparat de 2000 W folosit seara sau zilnic."),
+      guide("Convector electric", "convector-electric", "Potrivit pentru camere incalzite mai multe ore, mai ales daca ai termostat."),
+      guide("Aeroterma", "aeroterma", "Utila pe termen scurt, dar costisitoare daca merge continuu."),
+      guide("Radiator cu ulei", "radiator-ulei", "Verifica separat durata de alimentare, nu doar caldura pastrata dupa oprire."),
+      guide("Panou radiant", "panou-radiant", "Calculeaza costul pe zona incalzita si pe numarul de ore folosite.")
     ],
     tipsTitle: "Cum reduci consumul iarna",
     tips: [
-      "Incalzeste doar camerele folosite si inchide usile pentru a limita pierderile de caldura.",
-      "Foloseste termostatul sau treptele aparatului; functionarea continua la putere maxima creste rapid costul.",
-      "Verifica izolatia ferestrelor si pierderile de caldura inainte sa cresti durata de functionare.",
-      "La boiler, testeaza o temperatura mai moderata si evita incalzirea apei peste nevoia reala."
+      "Incalzeste doar camera folosita si inchide usile catre spatiile reci.",
+      "Foloseste termostatul. Functionarea continua la putere maxima se simte imediat in cost.",
+      "Etanseaza ferestrele si usile inainte sa maresti numarul de ore de incalzire.",
+      "La boiler, testeaza o temperatura mai moderata si incalzeste apa cand ai nevoie de ea."
     ],
     relatedHubSlugs: ["eficienta-energetica", "electrocasnice"],
     faq: [
       {
         question: "Care aparat de incalzire electrica poate consuma cel mai mult?",
         answer:
-          "Aparatele de 2000 W sau mai mult, folosite zilnic mai multe ore, pot avea cel mai mare impact. Boilerul si caloriferul electric sunt exemple frecvente."
+          "Boilerul si aparatele de camera de 2000 W sunt de obicei primele de verificat, mai ales daca merg zilnic cateva ore."
       },
       {
         question: "Un radiator cu ulei consuma mai putin decat un calorifer electric?",
         answer:
-          "Nu neaparat. Daca au aceeasi putere si functioneaza acelasi timp, consumul estimativ este apropiat. Diferenta vine din termostat, inertie termica si utilizare."
+          "Nu neaparat. Daca doua aparate au aceeasi putere si merg la fel de mult, consumul este apropiat. Diferenta vine din termostat si din felul in care le folosesti."
       },
       {
         question: "Cum estimez costul unui convector electric?",
         answer:
-          "Introdu puterea in W, orele de utilizare pe zi, zilele pe luna si pretul kWh in calculatorul principal."
+          "Ia puterea de pe eticheta, estimeaza cate ore il folosesti pe zi si calculeaza cu pretul kWh din factura."
       }
     ]
   },
@@ -147,46 +147,46 @@ export const seoHubs: SeoHub[] = [
     h1: "Consum electrocasnice",
     eyebrow: "Electrocasnice",
     intro: [
-      "Electrocasnicele sunt aparatele pe care le folosim cel mai des, iar consumul lor se aduna luna de luna. Unele functioneaza permanent, cum este frigiderul. Altele consuma mai mult in cicluri scurte, cum sunt masina de spalat, uscatorul de rufe, cuptorul electric sau plita. De aceea, doua aparate cu puteri foarte diferite pot avea costuri lunare apropiate daca timpul de utilizare este diferit.",
-      "Acest hub te ajuta sa compari electrocasnicele mari si aparatele de bucatarie care apar frecvent pe factura. Frigiderul are consum constant, dar compresorul porneste intermitent. Uscatorul de rufe poate avea consum mare pe ciclu, mai ales daca nu este un model eficient. Cuptorul si plita electrica depind de durata de gatire si de treapta folosita. Masina de spalat consuma mai mult cand incalzeste apa la temperaturi ridicate.",
-      "Pentru estimari utile, introdu date cat mai apropiate de utilizarea ta reala. Daca folosesti un aparat doar de cateva ori pe saptamana, nu il calcula ca si cum ar functiona zilnic. Daca ai consumul pe ciclu din eticheta energetica, poti transforma scenariul in ore sau poti folosi pagina de ghid pentru a intelege ordinul de marime. Scopul este sa identifici aparatele care merita optimizate, nu sa obtii o factura identica la leu."
+      "Electrocasnicele sunt folosite zilnic sau saptamanal, iar consumul lor se aduna fara sa fie mereu vizibil. Frigiderul sta in priza permanent, dar porneste intermitent. Masina de spalat, uscatorul, cuptorul si plita consuma mai mult in cicluri scurte. De aceea un aparat de putere mare nu este automat cel mai scump, daca il folosesti rar.",
+      "Aici gasesti aparatele care apar frecvent intr-o locuinta: frigider, congelator, masina de spalat, uscator, masina de spalat vase, cuptor, fierbator si espressor. Uscatorul de rufe poate costa mult pe ciclu, la cuptor conteaza durata gatirii, iar masina de spalat consuma mai mult cand incalzeste apa la temperaturi ridicate.",
+      "Poti economisi cand schimbi obiceiurile care se repeta. Porneste masina de spalat cu incarcatura potrivita, foloseste programe eco cand ai timp, nu pune frigiderul langa surse de caldura si evita sa incalzesti cuptorul pentru portii foarte mici. Calculeaza aparatele folosite des, nu doar pe cele cu putere mare."
     ],
     items: [
-      guide("Frigider", "frigider", "Ghid pentru consumul unui frigider si factori precum clasa energetica si temperatura."),
-      guide("Congelator", "congelator", "Consum permanent sau intermitent, influentat de volum, clasa energetica si amplasare."),
-      guide("Lada frigorifica", "lada-frigorifica", "Depozitare la rece pe termen lung, cu consum influentat de volum si amplasare."),
-      guide("Masina de spalat", "masina-de-spalat", "Estimari pentru programe uzuale si impactul temperaturii apei."),
-      guide("Uscator de rufe", "uscator-rufe", "Consum lunar pentru uscator si diferente intre scenarii de folosire."),
-      guide("Masina de spalat vase", "masina-spalat-vase", "Consum pe ciclu, influentat de program, temperatura si frecventa folosirii."),
-      guide("Cuptor electric", "cuptor-electric", "Cost pentru gatit la cuptor electric in scenarii obisnuite."),
-      guide("Cuptor cu microunde", "cuptor-microunde", "Putere mare pe perioade scurte, util pentru incalzire rapida."),
-      guide("Fierbator electric", "fierbator-electric", "Consum influentat de cantitatea de apa si numarul de fierberi zilnice."),
-      guide("Espressor", "espressor", "Cost estimativ pentru incalzire, cafea zilnica si timp in stand-by."),
-      calculator("Plita electrica", "Consum dependent de treapta, durata si numarul de zone folosite.")
+      guide("Frigider", "frigider", "Vezi costul unui aparat care sta pornit permanent, dar consuma in cicluri."),
+      guide("Congelator", "congelator", "Calculeaza consumul pentru depozitare la rece, in functie de volum si amplasare."),
+      guide("Lada frigorifica", "lada-frigorifica", "Utile pentru stocare pe termen lung, dar merita verificate anual."),
+      guide("Masina de spalat", "masina-de-spalat", "Compara programe reci, calde si frecventa ciclurilor lunare."),
+      guide("Uscator de rufe", "uscator-rufe", "Vezi cat costa confortul unui ciclu rapid fata de uscarea naturala."),
+      guide("Masina de spalat vase", "masina-spalat-vase", "Calculeaza costul in functie de cate cicluri faci intr-o luna."),
+      guide("Cuptor electric", "cuptor-electric", "Estimeaza costul pentru gatit, coacere si folosire de weekend."),
+      guide("Cuptor cu microunde", "cuptor-microunde", "Putere mare, dar timp scurt: bun pentru incalziri rapide."),
+      guide("Fierbator electric", "fierbator-electric", "Costul creste cand fierbi mai multa apa decat ai nevoie."),
+      guide("Espressor", "espressor", "Calculeaza cafeaua zilnica, incalzirea apei si timpul lasat pornit."),
+      calculator("Plita electrica", "Verifica separat treapta, durata si cate zone folosesti la gatit.")
     ],
     tipsTitle: "Cum reduci consumul electrocasnicelor",
     tips: [
-      "Foloseste programe eco cand sunt potrivite si evita temperaturile mari daca nu sunt necesare.",
-      "Nu lasa frigiderul langa surse de caldura si verifica garniturile usii.",
-      "Porneste masina de spalat sau masina de spalat vase cu incarcatura potrivita, nu pentru cateva obiecte.",
-      "La gatit, foloseste capacul si dimensiunea potrivita a vasului pentru plita."
+      "Alege programe eco cand timpul nu te preseaza si evita temperaturile mari fara motiv.",
+      "Tine frigiderul departe de cuptor, calorifer sau soare direct si verifica garniturile usii.",
+      "Porneste masina de spalat sau masina de vase cand este incarcata potrivit.",
+      "La gatit, foloseste capacul si potriveste vasul cu zona de pe plita."
     ],
     relatedHubSlugs: ["incalzire-electrica", "eficienta-energetica"],
     faq: [
       {
         question: "Ce electrocasnic consuma cel mai mult?",
         answer:
-          "Depinde de utilizare. Uscatorul, cuptorul, plita si aparatele care incalzesc apa pot consuma mult, dar si frigiderul conteaza pentru ca functioneaza permanent."
+          "Uscatorul, cuptorul, plita si aparatele care incalzesc apa pot urca factura rapid. Frigiderul conteaza prin folosire permanenta."
       },
       {
         question: "Frigiderul consuma la puterea maxima toata ziua?",
         answer:
-          "Nu. Compresorul porneste si se opreste in functie de temperatura, incarcare, deschiderea usii si eficienta aparatului."
+          "Nu. Compresorul porneste si se opreste. Usa deschisa des, mancarea calda si amplasarea langa surse de caldura il fac sa porneasca mai mult."
       },
       {
         question: "Cum estimez un aparat fara pagina dedicata?",
         answer:
-          "Foloseste calculatorul principal cu puterea din eticheta sau manual, durata de utilizare si pretul kWh din factura."
+          "Ia puterea din eticheta sau manual, estimeaza durata reala de folosire si introdu pretul kWh din factura."
       }
     ]
   },
@@ -198,42 +198,42 @@ export const seoHubs: SeoHub[] = [
     h1: "Consum electronice",
     eyebrow: "Electronice",
     intro: [
-      "Electronicele par de multe ori consumatori mici, dar pot conta daca functioneaza multe ore pe zi sau raman in stand-by permanent. Un laptop obisnuit consuma mult mai putin decat un PC gaming, dar diferenta reala depinde de incarcator, procesor, placa video, monitor si modul de utilizare. Un televizor modern are consum moderat, insa diagonala, luminozitatea si timpul zilnic de functionare pot schimba costul lunar.",
-      "Acest hub aduna aparatele electronice folosite frecvent in locuinta sau la birou: laptopuri, desktopuri, PC-uri de gaming, televizoare, monitoare, routere si console. Pentru multe dintre ele, puterea reala variaza in functie de activitate. Un PC gaming consuma mai mult in jocuri decat in browsing, iar o consola consuma diferit in joc, streaming sau stand-by. Routerul are putere mica, dar functioneaza aproape continuu.",
-      "Pentru estimari bune, foloseste puterea de pe incarcator sau din specificatii ca punct de pornire, apoi ajusteaza in functie de utilizare. Daca ai un wattmetru, poti masura direct consumul in scenariile tale reale. In lipsa masuratorilor, calculatorul te ajuta sa vezi daca un aparat folosit zilnic merita optimizat, oprit complet sau comparat cu o alternativa mai eficienta."
+      "Electronicele par consumatori mici, dar conteaza cand merg multe ore sau raman permanent in priza. Un laptop de birou consuma putin fata de un PC gaming, iar diferenta se vede daca lucrezi sau te joci zilnic. La televizor conteaza diagonala si luminozitatea, iar la monitor conteaza cate ore sta aprins langa calculator.",
+      "Aici gasesti laptopuri, desktopuri, PC-uri de gaming, televizoare, monitoare, routere si console. Multe nu consuma la fel tot timpul: un PC gaming cere mai multa energie in jocuri decat in browsing, o consola consuma diferit in joc fata de streaming, iar routerul are putere mica, dar merge aproape fara pauza.",
+      "Poti economisi prin oprirea aparatelor care stau degeaba, reducerea luminozitatii si folosirea modului sleep. Daca lucrezi opt ore pe zi, diferenta dintre laptop si desktop poate conta lunar. Daca ai un wattmetru, masoara direct consumul in joc, in lucru si in stand-by."
     ],
     items: [
-      calculator("Laptop", "Consum redus sau moderat, influentat de incarcator, sarcina si numarul de ore."),
-      calculator("PC desktop", "Consum variabil in functie de procesor, sursa, monitor si tipul de utilizare."),
-      guide("PC gaming", "pc-gaming", "Ghid pentru un sistem de gaming si scenarii cu jocuri solicitante."),
-      guide("Televizor", "televizor", "Consum pentru televizor in functie de diagonala, luminozitate si ore de folosire."),
-      calculator("Monitor", "Consum dependent de diagonala, luminozitate si tehnologia panoului."),
-      calculator("Router", "Consum mic, dar permanent, util de inclus in estimarea lunara."),
-      calculator("Consola jocuri", "Consum diferit in joc, streaming si stand-by.")
+      calculator("Laptop", "Bun de calculat cand lucrezi zilnic multe ore sau folosesti un model de gaming."),
+      calculator("PC desktop", "Include si monitorul daca vrei sa vezi costul complet al biroului."),
+      guide("PC gaming", "pc-gaming", "Vezi diferenta dintre gaming, browsing si un sistem lasat pornit inutil."),
+      guide("Televizor", "televizor", "Calculeaza consumul dupa diagonala, luminozitate si orele de seara."),
+      calculator("Monitor", "Merita inclus separat daca sta aprins langa laptop sau desktop."),
+      calculator("Router", "Putere mica, dar functionare aproape continua in fiecare luna."),
+      calculator("Consola jocuri", "Consumul se schimba intre joc, streaming si stand-by.")
     ],
     tipsTitle: "Cum reduci consumul electronicelor",
     tips: [
-      "Opreste complet aparatele pe care nu le folosesti mult timp, mai ales sistemele cu stand-by vizibil.",
-      "Redu luminozitatea monitorului sau televizorului daca este setata inutil de sus.",
-      "La PC, modul de economisire si oprirea monitorului pot conta in zilele lungi de lucru.",
-      "Verifica incarcatoarele si alimentatoarele care raman permanent in priza."
+      "Opreste complet aparatele pe care nu le folosesti ore intregi.",
+      "Redu luminozitatea monitorului sau televizorului cand este setata inutil de sus.",
+      "La PC, foloseste sleep si opreste monitorul in pauzele lungi.",
+      "Verifica alimentatoarele si incarcatoarele care raman permanent in priza."
     ],
     relatedHubSlugs: ["iluminat", "eficienta-energetica"],
     faq: [
       {
         question: "Un PC gaming consuma mult?",
         answer:
-          "Poate consuma semnificativ in jocuri, mai ales cu placa video puternica. In activitati usoare, consumul este de obicei mai mic."
+          "Da, mai ales in jocuri solicitante si cu placa video puternica. In browsing sau filme, acelasi sistem consuma de obicei mai putin."
       },
       {
         question: "Routerul conteaza pe factura?",
         answer:
-          "Are putere mica, dar functioneaza aproape permanent. Consumul lunar poate fi modest, dar merita inclus cand faci un total al locuintei."
+          "Da, dar de obicei nu este printre marii consumatori. Conteaza pentru ca merge zi si noapte."
       },
       {
         question: "Laptopul consuma mai putin decat desktopul?",
         answer:
-          "De obicei da, dar depinde de model. Laptopurile de gaming sau statiile mobile pot consuma mai mult decat un laptop simplu de birou."
+          "De obicei da pentru lucru obisnuit. Laptopurile de gaming sunt alta discutie si pot consuma mult mai mult."
       }
     ]
   },
@@ -245,40 +245,40 @@ export const seoHubs: SeoHub[] = [
     h1: "Consum iluminat",
     eyebrow: "Iluminat",
     intro: [
-      "Iluminatul are de obicei un consum mai mic decat incalzirea, racirea sau electrocasnicele mari, dar diferenta devine vizibila cand ai multe surse de lumina aprinse zilnic. Un singur bec LED consuma putin, insa zece becuri folosite seara in fiecare zi pot adauga un consum lunar masurabil. Becurile incandescente si halogene au puteri mai mari pentru aceeasi lumina utila, de aceea inlocuirea lor cu LED poate reduce costul fara sa schimbi obiceiurile principale.",
-      "Acest hub grupeaza tipurile comune de iluminat: LED, incandescent, halogen, banda LED si iluminat exterior. Fiecare scenariu trebuie privit prin trei valori simple: puterea sursei, numarul de ore si numarul de corpuri aprinse. Un bec de 10 W folosit 5 ore pe zi este ieftin, dar o instalatie exterioara lasata pornita toata noaptea poate ajunge la un consum mai important.",
-      "Cand estimezi iluminatul, calculeaza pe zone: sufragerie, dormitor, bucatarie, exterior sau birou. Asta te ajuta sa vezi unde merita schimbate becurile si unde este suficient sa reduci timpul de functionare. Daca folosesti banda LED decorativa sau iluminat de curte, verifica puterea totala in W, nu doar consumul pe metru sau pe corp."
+      "Iluminatul consuma mai putin decat incalzirea, racirea sau electrocasnicele mari, dar se aduna cand ai multe becuri aprinse zilnic. Un singur LED este ieftin de folosit. Zece becuri aprinse in fiecare seara sau o instalatie exterioara lasata toata noaptea pot deveni vizibile in consumul lunar.",
+      "Aici gasesti bec LED, incandescent, halogen, banda LED si iluminat exterior. Calculeaza mereu trei lucruri: puterea sursei, numarul de ore si cate corpuri sunt aprinse. Un bec de 10 W folosit 5 ore pe zi consuma putin, dar 12 becuri folosite la fel inseamna alt rezultat.",
+      "Poti economisi usor daca inlocuiesti becurile incandescente sau halogene folosite des cu LED-uri potrivite. Pentru exterior, temporizatorul si senzorul de miscare pot reduce orele inutile. La banda LED, verifica puterea totala in W, nu doar consumul pe metru."
     ],
     items: [
-      guide("Bec LED", "bec-led", "Consum redus si exemple de cost lunar pentru folosire zilnica."),
-      calculator("Bec incandescent", "Consum mai mare decat LED, util pentru comparatii rapide."),
-      calculator("Bec halogen", "Consum de obicei mai mare decat LED, influentat de putere si durata."),
-      calculator("Banda LED", "Consumul depinde de puterea pe metru si lungimea instalata."),
-      calculator("Iluminat exterior", "Costul poate creste daca luminile raman aprinse multe ore pe noapte.")
+      guide("Bec LED", "bec-led", "Calculeaza costul pentru unul sau mai multe becuri folosite zilnic."),
+      calculator("Bec incandescent", "Compara rapid un bec vechi cu un LED de luminozitate apropiata."),
+      calculator("Bec halogen", "Verifica diferenta fata de LED cand ai spoturi folosite multe ore."),
+      calculator("Banda LED", "Introdu puterea totala si lungimea instalata, nu doar consumul pe metru."),
+      calculator("Iluminat exterior", "Costul creste cand luminile raman aprinse toata noaptea.")
     ],
     tipsTitle: "Cum reduci consumul pentru iluminat",
     tips: [
-      "Inlocuieste becurile incandescente sau halogene folosite des cu LED-uri potrivite ca luminozitate.",
-      "Stinge luminile in camerele nefolosite si evita iluminatul decorativ pornit fara nevoie.",
-      "Pentru exterior, foloseste temporizator, senzor de miscare sau program adaptat sezonului.",
-      "Calculeaza consumul pe numar de becuri, nu doar pentru o singura sursa de lumina."
+      "Inlocuieste becurile incandescente sau halogene folosite des cu LED-uri potrivite ca lumina.",
+      "Stinge luminile in camerele goale si evita decorul luminos pornit fara nevoie.",
+      "Pentru exterior, foloseste temporizator, senzor de miscare sau program diferit vara/iarna.",
+      "Calculeaza consumul pentru toate becurile aprinse, nu doar pentru unul singur."
     ],
     relatedHubSlugs: ["electronice", "eficienta-energetica"],
     faq: [
       {
         question: "Cat conteaza trecerea de la incandescent la LED?",
         answer:
-          "Diferenta poate fi mare procentual, deoarece un LED poate oferi lumina similara la o putere mult mai mica. Economia creste cand ai multe becuri folosite zilnic."
+          "Conteaza mult daca becurile sunt folosite zilnic. Un LED poate oferi lumina apropiata cu mult mai putini W."
       },
       {
         question: "Banda LED consuma mult?",
         answer:
-          "Depinde de puterea pe metru si de lungimea instalata. O banda lunga folosita multe ore poate consuma mai mult decat pare la prima vedere."
+          "Conteaza puterea pe metru si lungimea instalata. O banda lunga, folosita seara de seara, poate costa mai mult decat pare."
       },
       {
         question: "Iluminatul exterior poate creste factura?",
         answer:
-          "Da, mai ales daca ramane pornit toata noaptea. Temporizatoarele si senzorii pot reduce timpul de functionare."
+          "Da, mai ales daca ramane aprins toata noaptea. Un temporizator sau un senzor reduce orele platite degeaba."
       }
     ]
   },
@@ -290,25 +290,25 @@ export const seoHubs: SeoHub[] = [
     h1: "Ghid de eficienta energetica",
     eyebrow: "Eficienta energetica",
     intro: [
-      "Eficienta energetica nu inseamna sa renunti la confort, ci sa intelegi unde se duce energia si ce schimbari au cel mai mare efect. In multe locuinte, cele mai mari diferente vin de la aparatele care incalzesc, racesc sau functioneaza multe ore: boiler electric, calorifer electric, aer conditionat, uscator de rufe, plita, cuptor, frigider sau PC gaming. Becurile si electronicele mici conteaza mai ales cand sunt multe sau raman pornite permanent.",
-      "Acest hub este punctul de pornire pentru utilizatorii care vor sa reduca factura fara promisiuni nerealiste. Primul pas este sa intelegi formula consumului: W / 1000 × ore × zile. Al doilea pas este sa folosesti pretul kWh din factura, pentru ca pretul real poate varia in functie de contract si perioada. Al treilea pas este sa compari scenarii: mai putine ore, temperatura diferita, program eco, aparat mai eficient sau utilizare doar in zilele necesare.",
-      "Clasele energetice, etichetele si manualele sunt utile, dar nu spun singure cat vei plati in casa ta. Costul final depinde de obiceiuri. De aceea, calculatorul si ghidurile Consumometru sunt construite pentru estimari transparente: introduci valorile, vezi rezultatul si intelegi ce limite are calculul. Foloseste pagina aceasta ca harta pentru cele mai importante categorii de consum din locuinta."
+      "Eficienta energetica inseamna sa vezi unde se duc kWh, nu sa renunti la confort. In multe locuinte, cele mai mari diferente vin de la aparatele care incalzesc, racesc sau merg multe ore: boiler electric, calorifer, aer conditionat, uscator de rufe, plita, cuptor, frigider sau PC gaming. Becurile si electronicele mici conteaza mai ales cand sunt multe sau raman pornite permanent.",
+      "Daca vrei sa reduci factura, incepe cu formula simpla: W / 1000 × ore × zile. Apoi foloseste pretul kWh din factura, nu o valoare aleasa la intamplare. Compara scenarii concrete: o ora mai putin pe zi, temperatura mai moderata, program eco, aparat folosit doar cand este nevoie sau inlocuirea unui consumator vechi.",
+      "Etichetele energetice si manualele sunt utile, dar nu spun singure cat vei plati in casa ta. Obiceiurile fac diferenta. Un uscator folosit de trei ori pe saptamana, un boiler setat prea sus sau un aer conditionat tinut la 19 grade pot conta mai mult decat aparatele mici pe care le verifici prima data."
     ],
     items: [
-      { name: "Cum reduci consumul electric", href: "/eficienta-energetica", status: "guide", description: "Porneste de la aparatele mari, apoi ajusteaza orele de utilizare si setarile." },
-      { name: "Cum citesti factura", href: "/ghiduri/cum-citesti-factura-la-curent", status: "guide", description: "Foloseste pretul kWh si consumul facturat pentru estimari mai apropiate de realitate." },
-      { name: "Cat costa 1 kWh", href: "/cat-costa/1-kwh", status: "guide", description: "Pretul se verifica in factura sau contract si poate fi introdus manual in calculator." },
-      { name: "Consum apartament 2 camere", href: "/consum-locuinta/apartament-2-camere", status: "guide", description: "Scenarii de consum pentru o locuinta mica sau medie." },
-      { name: "Consum familie 4 persoane", href: "/consum-locuinta/familie-4-persoane", status: "guide", description: "Estimare pe categorii pentru o locuinta folosita intens." },
-      calculator("Clase energetice", "Compara aparate similare tinand cont de consumul anual si modul tau de utilizare."),
-      calculator("Aparate care consuma cel mai mult", "Boilerul, incalzirea electrica, racirea si uscarea rufelor pot avea impact major.")
+      { name: "Cum reduci consumul electric", href: "/eficienta-energetica", status: "guide", description: "Incepe cu aparatele mari si cu cele care merg multe ore." },
+      { name: "Cum citesti factura", href: "/ghiduri/cum-citesti-factura-la-curent", status: "guide", description: "Gaseste consumul in kWh si pretul pe care il folosesti in calcule." },
+      { name: "Cat costa 1 kWh", href: "/cat-costa/1-kwh", status: "guide", description: "Vezi cum transformi kWh in lei si de ce pretul din factura conteaza." },
+      { name: "Consum apartament 2 camere", href: "/consum-locuinta/apartament-2-camere", status: "guide", description: "Repere pentru o locuinta mica, cu aparate folosite zilnic." },
+      { name: "Consum familie 4 persoane", href: "/consum-locuinta/familie-4-persoane", status: "guide", description: "Scenarii pentru spalare, gatit, electronice si apa calda." },
+      calculator("Clase energetice", "Compara aparate similare impreuna cu orele reale de folosire."),
+      calculator("Aparate care consuma cel mai mult", "Verifica boilerul, incalzirea electrica, racirea, uscatorul si plita.")
     ],
     tipsTitle: "Prioritati pentru o factura mai usor de controlat",
     tips: [
-      "Calculeaza intai aparatele de putere mare, nu cele mai mici consumuri din casa.",
-      "Testeaza scenarii cu o ora mai putin pe zi; la aparatele mari diferenta se vede imediat.",
-      "Foloseste pretul kWh din factura, nu o valoare generica, cand vrei o estimare apropiata.",
-      "Verifica etichetele energetice si manualele inainte de a compara doua aparate."
+      "Calculeaza intai aparatele de putere mare: boiler, calorifer, AC, uscator, plita.",
+      "Testeaza ce se intampla cu o ora mai putin pe zi. La aparatele mari diferenta apare imediat.",
+      "Foloseste pretul kWh din factura cand vrei o estimare apropiata de suma reala.",
+      "Verifica eticheta sau manualul inainte sa compari doua aparate asemanatoare."
     ],
     relatedHubSlugs: [
       "climatizare",
@@ -321,17 +321,17 @@ export const seoHubs: SeoHub[] = [
       {
         question: "Care este primul pas pentru reducerea consumului electric?",
         answer:
-          "Identifica aparatele cu putere mare sau utilizare lunga. Acolo schimbarile de timp, setare sau eficienta au cel mai mare impact."
+          "Uita-te intai la aparatele cu putere mare sau multe ore de folosire. Acolo o ora in minus sau o setare mai moderata conteaza cel mai mult."
       },
       {
         question: "De ce trebuie sa folosesc pretul kWh din factura?",
         answer:
-          "Pentru ca pretul real poate varia in functie de furnizor, contract si perioada. O valoare gresita schimba direct estimarea costului."
+          "Pentru ca pretul difera dupa contract si perioada. Daca introduci un pret gresit, si costul lunar iese gresit."
       },
       {
         question: "Clasele energetice garanteaza costul lunar?",
         answer:
-          "Nu. Ele ajuta la compararea aparatelor, dar costul lunar depinde de cat folosesti aparatul si de pretul energiei."
+          "Nu. Clasa energetica ajuta la comparatie, dar factura tine si de orele de folosire si de pretul energiei."
       }
     ]
   }

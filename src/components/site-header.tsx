@@ -3,13 +3,11 @@
 import Link from "next/link";
 import { Menu, X, Zap } from "lucide-react";
 import { useState } from "react";
+import { primaryNavigationLinks } from "@/data/siteNavigation";
 import { siteConfig } from "@/lib/site";
 
 const navigationLinks = [
-  { href: "/#calculator", label: "Calculator" },
-  { href: "/#simulator-factura", label: "Simulator" },
-  { href: "/#ghiduri-utile", label: "Ghiduri" },
-  { href: "/#faq", label: "FAQ" },
+  ...primaryNavigationLinks,
   { href: "/despre", label: "Despre" }
 ];
 

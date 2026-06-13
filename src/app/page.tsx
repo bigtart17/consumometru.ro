@@ -4,57 +4,32 @@ import { EnergyCalculator } from "@/components/energy-calculator";
 import { Faq } from "@/components/faq";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
-import { TopConsumers } from "@/components/top-consumers";
 import { appliancePresets } from "@/data/appliancePresets";
 import { faqItems } from "@/data/faq";
+import { siteNavigationPillars } from "@/data/siteNavigation";
 
-const formulaSteps = [
-  {
-    title: "1. Pornesti de la puterea aparatului",
-    body: "Puterea este trecuta de obicei pe eticheta, in manual sau pe incarcator. Un calorifer poate avea 2000 W, un laptop 45-90 W, iar un bec LED 8-12 W."
-  },
-  {
-    title: "2. O transformi in kWh",
-    body: "Formula folosita pe factura este simpla: W / 1000 × ore de folosire × zile. De exemplu, 1000 W folosit 2 ore inseamna 2 kWh pe zi."
-  },
-  {
-    title: "3. Inmultesti cu pretul energiei",
-    body: "Pretul final depinde de contractul tau. Daca folosesti 60 kWh pe luna si platesti 1,30 lei/kWh, costul estimativ este 78 lei pe luna."
-  }
-];
+const pillarCards = siteNavigationPillars.map((pillar) => ({
+  href: pillar.href,
+  title: pillar.label,
+  body: pillar.description,
+  cta:
+    pillar.key === "calculeaza"
+      ? "Alege calculatorul"
+      : pillar.key === "aparate"
+        ? "Vezi aparatele"
+        : pillar.key === "comparatii"
+          ? "Vezi comparatiile"
+          : "Citeste ghidurile"
+}));
 
-const calculationExamples = [
-  {
-    title: "Bec LED folosit seara in sufragerie",
-    values: "10 W × 5 ore/zi × 30 zile",
-    result: "1,5 kWh/luna",
-    cost: "aproximativ 1,95 lei/luna la 1,30 lei/kWh",
-    note: "Diferenta devine importanta cand ai mai multe becuri aprinse zilnic."
-  },
-  {
-    title: "Boiler electric folosit zilnic",
-    values: "2000 W × 2 ore/zi × 30 zile",
-    result: "120 kWh/luna",
-    cost: "aproximativ 156 lei/luna la 1,30 lei/kWh",
-    note: "Temperatura setata si izolarea boilerului pot schimba mult consumul real."
-  },
-  {
-    title: "PC gaming folosit dupa munca",
-    values: "550 W × 4 ore/zi × 30 zile",
-    result: "66 kWh/luna",
-    cost: "aproximativ 85,8 lei/luna la 1,30 lei/kWh",
-    note: "In jocuri solicitante consumul poate fi mai mare decat in browsing sau filme."
-  }
-];
-
-const commonAppliances = [
+const topAppliances = [
   {
     name: "Boiler electric",
     href: "/cat-consuma/boiler-electric-80l",
     usage: "2000 W, 2 ore/zi",
     monthly: "120 kWh/luna",
     cost: "156 lei/luna",
-    insight: "Unul dintre aparatele care poate ridica rapid factura daca functioneaza zilnic."
+    insight: "Un aparat important de verificat cand apa calda este electrica."
   },
   {
     name: "Aer conditionat 12000 BTU",
@@ -62,15 +37,7 @@ const commonAppliances = [
     usage: "1200 W, 5 ore/zi",
     monthly: "180 kWh/luna",
     cost: "234 lei/luna",
-    insight: "Costul depinde mult de temperatura setata, izolatia camerei si modul inverter."
-  },
-  {
-    name: "Frigider",
-    href: "/cat-consuma/frigider",
-    usage: "120 W, functionare intermitenta",
-    monthly: "28,8 kWh/luna",
-    cost: "37,4 lei/luna",
-    insight: "Merge permanent, dar compresorul nu consuma la putere maxima tot timpul."
+    insight: "Costul depinde mult de temperatura setata si de izolatia camerei."
   },
   {
     name: "Calorifer electric",
@@ -78,104 +45,103 @@ const commonAppliances = [
     usage: "2000 W, 4 ore/zi",
     monthly: "240 kWh/luna",
     cost: "312 lei/luna",
-    insight: "Poate fi scump pentru incalzire zilnica, mai ales in camere slab izolate."
+    insight: "Poate deveni scump rapid daca este folosit zilnic pentru incalzire."
   },
   {
-    name: "Masina de spalat",
-    href: "/cat-consuma/masina-de-spalat",
-    usage: "700 W, 1 ora/zi",
-    monthly: "21 kWh/luna",
-    cost: "27,3 lei/luna",
-    insight: "Programele cu apa calda consuma mai mult decat cele eco sau la temperatura mica."
+    name: "Frigider",
+    href: "/cat-consuma/frigider",
+    usage: "120 W, functionare intermitenta",
+    monthly: "28,8 kWh/luna",
+    cost: "37,4 lei/luna",
+    insight: "Functioneaza permanent, asa ca eficienta si vechimea conteaza."
   },
   {
-    name: "Bec LED",
-    href: "/cat-consuma/bec-led",
-    usage: "10 W, 6 ore/zi",
-    monthly: "1,8 kWh/luna",
-    cost: "2,3 lei/luna",
-    insight: "Cost mic pe bec, dar conteaza daca inlocuieste multe becuri incandescente."
+    name: "PC gaming",
+    href: "/cat-consuma/pc-gaming",
+    usage: "550 W, 4 ore/zi",
+    monthly: "66 kWh/luna",
+    cost: "85,8 lei/luna",
+    insight: "In jocuri solicitante poate consuma mult mai mult decat un laptop."
   }
 ];
 
-const savingTips = [
+const popularComparisons = [
   {
-    title: "Uita-te intai la aparatele mari",
-    body: "Boilerul, caloriferul electric, aerul conditionat, uscatorul de rufe si plita pot consuma intr-o luna cat zeci de becuri LED. Acolo apar cele mai mari diferente."
+    href: "/comparatii/calorifer-electric-vs-aer-conditionat",
+    title: "Calorifer electric vs aer conditionat",
+    body: "Compara incalzirea electrica directa cu un aparat folosit pe pompa de caldura."
   },
   {
-    title: "Redu timpul, nu doar puterea",
-    body: "Un aparat de 2000 W folosit cu o ora mai putin pe zi poate economisi aproximativ 60 kWh pe luna, adica 78 lei la 1,30 lei/kWh."
+    href: "/comparatii/boiler-electric-vs-instant",
+    title: "Boiler electric vs instant",
+    body: "Vezi diferenta dintre apa calda stocata si incalzirea la cerere."
   },
   {
-    title: "Foloseste programele eco cand au sens",
-    body: "La masina de spalat sau uscator, programele potrivite pot reduce incalzirea apei sau durata de functionare intensa. Diferenta se vede mai ales la folosire frecventa."
+    href: "/comparatii/bec-led-vs-bec-incandescent",
+    title: "Bec LED vs bec incandescent",
+    body: "O comparatie simpla pentru iluminat si costuri mici care se aduna."
   },
   {
-    title: "Verifica stand-by-ul aparatelor vechi",
-    body: "Un consum mic, dar permanent, se aduna. Routerul, televizorul, boxele, consolele si incarcatoarele pot conta daca raman pornite tot timpul."
+    href: "/comparatii/laptop-vs-desktop",
+    title: "Laptop vs desktop",
+    body: "Afla cand diferenta de consum conteaza pentru lucru sau divertisment."
+  },
+  {
+    href: "/comparatii/consum-aer-conditionat-vs-ventilator",
+    title: "Aer conditionat vs ventilator",
+    body: "Compara racirea activa cu circularea aerului in zilele calde."
+  },
+  {
+    href: "/comparatii/consum-uscator-rufe-vs-uscare-naturala",
+    title: "Uscator rufe vs uscare naturala",
+    body: "Estimeaza cat platesti pentru confort si timp castigat."
   }
 ];
 
-const dedicatedGuides = [
-  { href: "/cat-consuma/aer-conditionat-12000-btu", label: "Cat consuma un aer conditionat 12000 BTU" },
-  { href: "/cat-consuma/pc-gaming", label: "Cat consuma un PC gaming" },
-  { href: "/cat-consuma/boiler-electric-80l", label: "Cat consuma un boiler electric de 80 l" },
-  { href: "/cat-consuma/frigider", label: "Cat consuma un frigider" },
-  { href: "/cat-consuma/calorifer-electric", label: "Cat consuma un calorifer electric" },
-  { href: "/cat-consuma/televizor", label: "Cat consuma un televizor" },
-  { href: "/cat-consuma/masina-de-spalat", label: "Cat consuma o masina de spalat" },
-  { href: "/cat-consuma/uscator-rufe", label: "Cat consuma un uscator de rufe" },
-  { href: "/cat-consuma/cuptor-electric", label: "Cat consuma un cuptor electric" },
-  { href: "/cat-consuma/bec-led", label: "Cat consuma un bec LED" }
+const housingScenarios = [
+  {
+    href: "/consum-locuinta/apartament-2-camere",
+    title: "Apartament 2 camere",
+    body: "Repere pentru o locuinta mica sau medie, fara aparate electrice extreme."
+  },
+  {
+    href: "/consum-locuinta/apartament-3-camere",
+    title: "Apartament 3 camere",
+    body: "Scenarii pentru mai multe camere, electronice si electrocasnice folosite zilnic."
+  },
+  {
+    href: "/consum-locuinta/casa",
+    title: "Casa",
+    body: "Estimari pentru locuinte cu mai multe camere si consumatori suplimentari."
+  },
+  {
+    href: "/consum-locuinta/familie-4-persoane",
+    title: "Familie 4 persoane",
+    body: "Repere pentru spalare, gatit, iluminat si electronice folosite intens."
+  }
 ];
 
-const homepageEntryPoints = [
+const usefulGuides = [
   {
-    href: "/#calculator",
-    title: "Calculeaza consumul unui aparat",
-    body: "Introdu puterea in W, orele de utilizare si pretul kWh pentru o estimare rapida.",
-    cta: "Deschide calculatorul"
+    href: "/ghiduri/cum-citesti-factura-la-curent",
+    title: "Cum citesti factura la curent",
+    body: "Gaseste consumul in kWh si pretul pe care il poti folosi in calculator."
   },
   {
-    href: "/comparatii",
-    title: "Compara doua aparate",
-    body: "Vezi diferente lunare si anuale intre variante folosite frecvent in casa.",
-    cta: "Vezi comparatiile"
-  },
-  {
-    href: "/#simulator-factura",
-    title: "Simuleaza factura lunara",
-    body: "Adauga mai multe aparate si afla cine contribuie cel mai mult la total.",
-    cta: "Porneste simulatorul"
+    href: "/cat-costa/1-kwh",
+    title: "Cat costa 1 kWh",
+    body: "Afla cum transformi consumul electric in cost lunar."
   },
   {
     href: "/eficienta-energetica",
-    title: "Vezi ghiduri si exemple",
-    body: "Citeste explicatii despre kWh, factura si metode realiste de reducere a consumului.",
-    cta: "Deschide ghidurile"
+    title: "Ghid de eficienta energetica",
+    body: "Vezi ce aparate merita verificate primele si cum reduci consumul."
   },
   {
-    href: "/consum-locuinta/apartament-2-camere",
-    title: "Consum pe locuinta",
-    body: "Porneste de la scenarii pentru apartament, casa sau familie si ajusteaza dupa cazul tau.",
-    cta: "Vezi scenarii"
-  },
-  {
-    href: "/climatizare",
-    title: "Hub-uri tematice",
-    body: "Exploreaza aparatele grupate pe climatizare, incalzire, electrocasnice, electronice si iluminat.",
-    cta: "Vezi categoriile"
+    href: "/metodologie",
+    title: "Metodologie",
+    body: "Intelege formula, limitele calculului si ce factori schimba rezultatul."
   }
-];
-
-const thematicHubs = [
-  { href: "/climatizare", label: "Climatizare" },
-  { href: "/incalzire-electrica", label: "Incalzire electrica" },
-  { href: "/electrocasnice", label: "Electrocasnice" },
-  { href: "/electronice", label: "Electronice" },
-  { href: "/iluminat", label: "Iluminat" },
-  { href: "/eficienta-energetica", label: "Eficienta energetica" }
 ];
 
 export default function Home() {
@@ -184,25 +150,33 @@ export default function Home() {
       <SiteHeader />
 
       <section className="px-4 pb-10 pt-8 sm:px-6 lg:px-8 lg:pb-16 lg:pt-8">
-        <div className="mx-auto grid max-w-7xl items-start gap-8 lg:grid-cols-[0.95fr_1.05fr]">
-          <div className="order-2 max-w-2xl lg:order-1 lg:pt-2">
+        <div className="mx-auto grid max-w-7xl items-start gap-8 lg:grid-cols-[0.9fr_1.1fr]">
+          <div className="order-2 max-w-2xl lg:order-1 lg:pt-4">
             <p className="mb-4 inline-flex items-center rounded-full border border-emerald-200 bg-white/75 px-3 py-1 text-sm font-medium text-emerald-800 shadow-sm">
-              Romania • lei/kWh • estimari instant
+              Romania • lei/kWh • calcul instant
             </p>
             <h1 className="text-3xl font-semibold tracking-normal text-slate-950 sm:text-5xl lg:text-6xl">
               Consumometru: calculator consum electric si cost energie
             </h1>
-            <p className="mt-4 max-w-xl text-base leading-7 text-slate-700 sm:mt-5 sm:text-lg sm:leading-8">
+            <p className="mt-4 max-w-2xl text-base leading-7 text-slate-700 sm:mt-5 sm:text-lg sm:leading-8">
               Afla cat consuma un aparat electric, cat te costa pe luna si ce
               schimbari pot reduce factura. Calculatorul foloseste puterea in W,
               orele de utilizare, zilele pe luna si pretul real din factura ta.
             </p>
-            <p className="mt-4 max-w-xl text-sm leading-6 text-slate-600">
-              Este util cand vrei sa verifici un boiler, un aer conditionat, un
-              frigider vechi, un PC gaming sau mai multe aparate din locuinta.
-              Rezultatele sunt estimative, dar te ajuta sa compari scenarii
-              concrete inainte sa iei o decizie.
-            </p>
+            <div className="mt-5 flex flex-wrap gap-3">
+              <Link
+                href="#calculator"
+                className="rounded-lg bg-emerald-700 px-4 py-3 text-sm font-semibold text-white transition hover:bg-emerald-800"
+              >
+                Calculeaza acum
+              </Link>
+              <Link
+                href="/calculeaza"
+                className="rounded-lg border border-emerald-200 bg-white px-4 py-3 text-sm font-semibold text-emerald-800 transition hover:border-emerald-300"
+              >
+                Vezi toate calculatoarele
+              </Link>
+            </div>
             <div className="mt-5 grid gap-3 text-sm text-slate-700 sm:mt-7 sm:grid-cols-3">
               <span className="rounded-lg border border-emerald-100 bg-white/80 px-3 py-2">
                 kWh calculat automat
@@ -224,28 +198,21 @@ export default function Home() {
 
       <section id="navigare-rapida" className="border-y border-emerald-100 bg-white/72 px-4 py-10 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-7xl">
-          <div className="grid gap-5 lg:grid-cols-[0.7fr_1.3fr] lg:items-end">
-            <div>
-              <p className="text-sm font-semibold uppercase tracking-wider text-emerald-700">
-                Navigare rapida
-              </p>
-              <h2 className="mt-2 text-3xl font-semibold text-slate-950">
-                Alege ce vrei sa estimezi
-              </h2>
-            </div>
-            <p className="text-sm leading-6 text-slate-600">
-              Consumometru nu este doar un calculator pentru un aparat. Poti
-              compara variante, simula factura unei locuinte si citi ghiduri
-              grupate pe tipuri de aparate.
+          <div className="max-w-3xl">
+            <p className="text-sm font-semibold uppercase tracking-wider text-emerald-700">
+              Navigare rapida
             </p>
+            <h2 className="mt-2 text-3xl font-semibold text-slate-950">
+              Alege zona potrivita
+            </h2>
           </div>
 
-          <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-            {homepageEntryPoints.map((item) => (
+          <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+            {pillarCards.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className="group flex min-h-40 flex-col rounded-lg border border-emerald-100 bg-white p-5 shadow-sm transition hover:border-emerald-300 hover:-translate-y-0.5"
+                className="group flex min-h-40 flex-col rounded-lg border border-emerald-100 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:border-emerald-300"
               >
                 <h3 className="text-lg font-semibold text-slate-950">
                   {item.title}
@@ -259,216 +226,179 @@ export default function Home() {
               </Link>
             ))}
           </div>
-
-          <div className="mt-4 rounded-lg border border-emerald-100 bg-emerald-50/70 p-4">
-            <p className="text-sm font-semibold text-emerald-950">
-              Hub-uri tematice pentru cautari rapide
-            </p>
-            <div className="mt-3 flex flex-wrap gap-2">
-              {thematicHubs.map((hub) => (
-                <Link
-                  key={hub.href}
-                  href={hub.href}
-                  className="rounded-full border border-emerald-200 bg-white px-3 py-2 text-sm font-semibold text-emerald-800 transition hover:border-emerald-300 hover:text-emerald-950"
-                >
-                  {hub.label}
-                </Link>
-              ))}
-            </div>
-          </div>
         </div>
       </section>
 
-      <section className="border-y border-emerald-100 bg-white/72 px-4 py-14 sm:px-6 lg:px-8">
-        <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.78fr_1.22fr]">
+      <section id="top-consumatori" className="px-4 py-12 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl">
           <div>
             <p className="text-sm font-semibold uppercase tracking-wider text-emerald-700">
-              Formula de calcul
+              Top aparate calculate
             </p>
             <h2 className="mt-2 text-3xl font-semibold text-slate-950">
-              Cum se calculeaza consumul electric al unui aparat
+              Aparatele care merita verificate primele
             </h2>
-            <p className="mt-3 text-sm leading-6 text-slate-600">
-              Pentru factura nu conteaza doar puterea aparatului, ci si cat timp
-              functioneaza. De aceea un aparat puternic folosit rar poate costa
-              mai putin decat unul mai mic lasat pornit zilnic.
-            </p>
-            <div className="mt-5 rounded-lg border border-emerald-100 bg-emerald-50 p-4 text-sm font-semibold text-emerald-950">
-              kWh = W / 1000 × ore pe zi × zile pe luna
-            </div>
           </div>
-          <div className="grid gap-4 md:grid-cols-3">
-            {formulaSteps.map((card) => (
-              <article
-                key={card.title}
-                className="rounded-lg border border-emerald-100 bg-white p-5 shadow-sm"
+
+          <div className="mt-7 grid gap-4 md:grid-cols-2 lg:grid-cols-5">
+            {topAppliances.map((appliance) => (
+              <Link
+                key={appliance.href}
+                href={appliance.href}
+                className="rounded-lg border border-emerald-100 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:border-emerald-300"
               >
                 <h3 className="text-lg font-semibold text-slate-950">
-                  {card.title}
+                  {appliance.name}
                 </h3>
-                <p className="mt-3 text-sm leading-6 text-slate-600">
-                  {card.body}
+                <p className="mt-2 text-sm text-slate-600">{appliance.usage}</p>
+                <p className="mt-4 text-xl font-semibold text-slate-950">
+                  {appliance.monthly}
                 </p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="px-4 py-14 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-7xl">
-          <div className="max-w-3xl">
-            <p className="text-sm font-semibold uppercase tracking-wider text-emerald-700">
-              Exemple reale de calcul
-            </p>
-            <h2 className="mt-2 text-3xl font-semibold text-slate-950">
-              Exemple concrete de consum si cost lunar
-            </h2>
-            <p className="mt-3 text-sm leading-6 text-slate-600">
-              Exemplele de mai jos folosesc pretul orientativ de 1,30 lei/kWh.
-              Pentru o estimare mai apropiata de factura ta, introdu pretul din
-              contract in calculatorul de sus.
-            </p>
-          </div>
-
-          <div className="mt-7 grid gap-4 md:grid-cols-3">
-            {calculationExamples.map((example) => (
-              <article
-                key={example.title}
-                className="rounded-lg border border-emerald-100 bg-white/82 p-5 shadow-sm"
-              >
-                <h3 className="text-lg font-semibold text-slate-950">
-                  {example.title}
-                </h3>
-                <p className="mt-3 rounded-lg bg-emerald-50 p-3 text-sm font-semibold text-emerald-900">
-                  {example.values}
-                </p>
-                <p className="mt-3 text-2xl font-semibold text-slate-950">
-                  {example.result}
-                </p>
-                <p className="mt-2 text-sm font-semibold text-emerald-800">
-                  {example.cost}
+                <p className="mt-1 text-sm font-semibold text-emerald-800">
+                  {appliance.cost}
                 </p>
                 <p className="mt-3 text-sm leading-6 text-slate-600">
-                  {example.note}
+                  {appliance.insight}
                 </p>
-              </article>
+              </Link>
             ))}
           </div>
-        </div>
-      </section>
 
-      <section id="aparate" className="border-y border-emerald-100 bg-white/72 px-4 py-14 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-7xl">
-          <div className="grid gap-6 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
-            <div>
-              <p className="text-sm font-semibold uppercase tracking-wider text-emerald-700">
-                Aparate comune
-              </p>
-              <h2 className="mt-2 text-3xl font-semibold text-slate-950">
-                Cele mai comune aparate si consumul lor
-              </h2>
-            </div>
-            <p className="text-sm leading-6 text-slate-600">
-              Valorile sunt estimative si pornesc de la scenarii des intalnite
-              in locuinte din Romania. Foloseste-le ca punct de plecare, apoi
-              ajusteaza puterea si orele dupa aparatul tau.
-            </p>
-          </div>
-
-          <div className="mt-7 overflow-hidden rounded-lg border border-emerald-100 bg-white shadow-sm">
-            <div className="hidden grid-cols-[1.1fr_0.9fr_0.8fr_0.8fr_1.4fr] gap-4 border-b border-emerald-100 bg-emerald-50 px-4 py-3 text-xs font-semibold uppercase tracking-wider text-emerald-900 lg:grid">
-              <span>Aparat</span>
-              <span>Scenariu</span>
-              <span>Consum lunar</span>
-              <span>Cost lunar</span>
-              <span>Observatie utila</span>
-            </div>
-            <div className="divide-y divide-emerald-50">
-              {commonAppliances.map((appliance) => (
-                <article
-                  key={appliance.name}
-                  className="grid gap-3 p-4 text-sm lg:grid-cols-[1.1fr_0.9fr_0.8fr_0.8fr_1.4fr] lg:items-center"
-                >
-                  <Link
-                    href={appliance.href}
-                    className="text-base font-semibold text-slate-950 hover:text-emerald-700"
-                  >
-                    {appliance.name}
-                  </Link>
-                  <p className="text-slate-600">{appliance.usage}</p>
-                  <p className="font-semibold text-slate-950">{appliance.monthly}</p>
-                  <p className="font-semibold text-emerald-800">{appliance.cost}</p>
-                  <p className="leading-6 text-slate-600">{appliance.insight}</p>
-                </article>
-              ))}
-            </div>
-          </div>
+          <Link
+            href="/aparate"
+            className="mt-6 inline-flex text-sm font-semibold text-emerald-700 hover:text-emerald-800"
+          >
+            Vezi toate aparatele
+          </Link>
         </div>
       </section>
 
       <DeferredBillSimulator />
 
-      <TopConsumers />
-
-      <section className="bg-white/72 px-4 py-14 sm:px-6 lg:px-8">
-        <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.85fr_1.15fr]">
-          <div>
-            <p className="text-sm font-semibold uppercase tracking-wider text-emerald-700">
-              Economie
-            </p>
-            <h2 className="mt-2 text-3xl font-semibold text-slate-950">
-              Cum reduci factura la curent fara calcule complicate
-            </h2>
-            <p className="mt-3 text-sm leading-6 text-slate-600">
-              Nu toate economiile vin din schimbarea furnizorului. De multe ori,
-              cele mai rapide imbunatatiri apar cand intelegi care aparat consuma
-              mult si cat timp functioneaza.
+      <section className="border-y border-emerald-100 bg-white/72 px-4 py-12 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl">
+          <div className="grid gap-5 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-wider text-emerald-700">
+                Comparatii populare
+              </p>
+              <h2 className="mt-2 text-3xl font-semibold text-slate-950">
+                Vezi ce varianta poate costa mai putin
+              </h2>
+            </div>
+            <p className="text-sm leading-6 text-slate-600 lg:text-right">
+              Compara aparate apropiate si vezi diferenta lunara si anuala in
+              scenarii de lucru.
             </p>
           </div>
-          <div className="grid gap-4 sm:grid-cols-2">
-            {savingTips.map((tip) => (
-              <article
-                key={tip.title}
-                className="rounded-lg border border-emerald-100 bg-white p-5 shadow-sm"
+
+          <div className="mt-7 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+            {popularComparisons.map((comparison) => (
+              <Link
+                key={comparison.href}
+                href={comparison.href}
+                className="rounded-lg border border-emerald-100 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:border-emerald-300"
               >
                 <h3 className="text-lg font-semibold text-slate-950">
-                  {tip.title}
+                  {comparison.title}
                 </h3>
-                <p className="mt-3 text-sm leading-6 text-slate-600">
-                  {tip.body}
+                <p className="mt-2 text-sm leading-6 text-slate-600">
+                  {comparison.body}
                 </p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section id="ghiduri-utile" className="px-4 py-14 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-7xl">
-          <div className="max-w-2xl">
-            <p className="text-sm font-semibold uppercase tracking-wider text-emerald-700">
-              Linkuri interne
-            </p>
-            <h2 className="mt-2 text-3xl font-semibold text-slate-950">
-              Ghiduri dedicate pentru aparatele cautate cel mai des
-            </h2>
-            <p className="mt-3 text-sm leading-6 text-slate-600">
-              Fiecare pagina include calculator precompletat, explicatii,
-              estimari lunare si intrebari frecvente pentru aparatul respectiv.
-            </p>
-          </div>
-          <div className="mt-7 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-            {dedicatedGuides.map((guide) => (
-              <Link
-                key={guide.href}
-                href={guide.href}
-                className="rounded-lg border border-emerald-100 bg-white/82 p-5 text-sm font-semibold text-slate-800 shadow-sm transition hover:border-emerald-300 hover:text-emerald-700"
-              >
-                {guide.label}
               </Link>
             ))}
           </div>
+
+          <Link
+            href="/comparatii"
+            className="mt-6 inline-flex text-sm font-semibold text-emerald-700 hover:text-emerald-800"
+          >
+            Vezi toate comparatiile
+          </Link>
+        </div>
+      </section>
+
+      <section className="px-4 py-12 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl">
+          <div className="max-w-3xl">
+            <p className="text-sm font-semibold uppercase tracking-wider text-emerald-700">
+              Scenarii locuinta
+            </p>
+            <h2 className="mt-2 text-3xl font-semibold text-slate-950">
+              Estimeaza consumul pentru casa sau apartament
+            </h2>
+            <p className="mt-3 text-sm leading-6 text-slate-600">
+              Daca vrei o privire de ansamblu, porneste de la un scenariu de
+              locuinta si ajusteaza apoi aparatele in simulator.
+            </p>
+          </div>
+
+          <div className="mt-7 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+            {housingScenarios.map((scenario) => (
+              <Link
+                key={scenario.href}
+                href={scenario.href}
+                className="rounded-lg border border-emerald-100 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:border-emerald-300"
+              >
+                <h3 className="text-lg font-semibold text-slate-950">
+                  {scenario.title}
+                </h3>
+                <p className="mt-2 text-sm leading-6 text-slate-600">
+                  {scenario.body}
+                </p>
+              </Link>
+            ))}
+          </div>
+
+          <Link
+            href="/ghiduri"
+            className="mt-6 inline-flex text-sm font-semibold text-emerald-700 hover:text-emerald-800"
+          >
+            Vezi toate ghidurile
+          </Link>
+        </div>
+      </section>
+
+      <section id="ghiduri-utile" className="border-y border-emerald-100 bg-white/72 px-4 py-12 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl">
+          <div className="grid gap-5 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-wider text-emerald-700">
+                Ghiduri utile
+              </p>
+              <h2 className="mt-2 text-3xl font-semibold text-slate-950">
+                Explicatii scurte pentru decizii mai bune
+              </h2>
+            </div>
+            <p className="text-sm leading-6 text-slate-600 lg:text-right">
+              Detaliile despre formule, facturi si economie sunt grupate in
+              pagina de ghiduri.
+            </p>
+          </div>
+
+          <div className="mt-7 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+            {usefulGuides.map((guide) => (
+              <Link
+                key={guide.href}
+                href={guide.href}
+                className="rounded-lg border border-emerald-100 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:border-emerald-300"
+              >
+                <h3 className="text-lg font-semibold text-slate-950">
+                  {guide.title}
+                </h3>
+                <p className="mt-2 text-sm leading-6 text-slate-600">
+                  {guide.body}
+                </p>
+              </Link>
+            ))}
+          </div>
+
+          <Link
+            href="/ghiduri"
+            className="mt-6 inline-flex text-sm font-semibold text-emerald-700 hover:text-emerald-800"
+          >
+            Deschide pagina de ghiduri
+          </Link>
         </div>
       </section>
 

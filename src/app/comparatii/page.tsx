@@ -1,8 +1,14 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import {
+  createBreadcrumbSchema,
+  JsonLdScript
+} from "@/components/seo/json-ld-script";
+import { SeoBreadcrumbs } from "@/components/seo/seo-breadcrumbs";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { seoComparisons } from "@/data/seoComparisons";
+import { absoluteUrl } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Comparatii consum aparate electrice",
@@ -21,12 +27,25 @@ export const metadata: Metadata = {
   }
 };
 
+const breadcrumbSchema = createBreadcrumbSchema([
+  { name: "Homepage", item: absoluteUrl("/") },
+  { name: "Comparatii", item: absoluteUrl("/comparatii") }
+]);
+
 export default function ComparisonsIndexPage() {
   return (
     <main>
+      <JsonLdScript data={breadcrumbSchema} />
       <SiteHeader />
       <section className="px-4 py-12 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-7xl">
+          <SeoBreadcrumbs
+            className="mb-5"
+            items={[
+              { label: "Homepage", href: "/" },
+              { label: "Comparatii" }
+            ]}
+          />
           <p className="text-sm font-semibold uppercase tracking-wider text-emerald-700">
             Comparatii
           </p>
