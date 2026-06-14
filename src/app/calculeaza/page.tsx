@@ -46,6 +46,15 @@ const mainCalculatorLinks = [
       "Introdu puterea in W, orele de utilizare, zilele pe luna si pretul kWh pentru o estimare rapida."
   },
   {
+    href: "/calculeaza/consum-anual-locuinta",
+    title: "Calculator consum anual locuință",
+    eyebrow: "Pe tot anul",
+    badge: "Recomandat",
+    featured: true,
+    description:
+      "Estimează consumul electric și costul locuinței pentru fiecare lună din an, în funcție de aparate, tipul locuinței și numărul de persoane."
+  },
+  {
     href: "/#simulator-factura",
     title: "Simulator factura energie",
     eyebrow: "Mai multe aparate",

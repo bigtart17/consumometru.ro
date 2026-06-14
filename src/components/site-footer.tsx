@@ -19,6 +19,7 @@ const footerSections: FooterSection[] = [
     links: [
       { href: "/#calculator", label: "Calculator consum electric" },
       { href: getPillarHref("calculeaza"), label: "Calculatoare consum electric" },
+      { href: "/calculeaza/consum-anual-locuinta", label: "Consum anual locuință" },
       { href: "/#simulator-factura", label: "Simulator factura" },
       { href: "/cat-costa/1-kwh", label: "Cost 1 kWh" },
       { href: "/consum-locuinta/apartament-2-camere", label: "Consum locuinta" }

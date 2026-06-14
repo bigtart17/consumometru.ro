@@ -5,6 +5,8 @@ export type InternalLinkCard = {
   title: string;
   eyebrow?: string;
   description?: string;
+  badge?: string;
+  featured?: boolean;
 };
 
 type InternalLinksGridProps = {
@@ -29,13 +31,24 @@ export function InternalLinksGrid({
         <Link
           key={`${link.href}-${link.title}`}
           href={link.href}
-          className="rounded-lg border border-emerald-100 bg-white p-4 text-slate-950 shadow-sm transition hover:border-emerald-300"
+          className={
+            link.featured
+              ? "rounded-lg border border-emerald-300 bg-emerald-50 p-4 text-slate-950 shadow-sm transition hover:-translate-y-0.5 hover:border-emerald-400"
+              : "rounded-lg border border-emerald-100 bg-white p-4 text-slate-950 shadow-sm transition hover:border-emerald-300"
+          }
         >
-          {link.eyebrow ? (
-            <span className="text-sm font-medium text-emerald-700">
-              {link.eyebrow}
-            </span>
-          ) : null}
+          <span className="flex flex-wrap items-center gap-2">
+            {link.eyebrow ? (
+              <span className="text-sm font-medium text-emerald-700">
+                {link.eyebrow}
+              </span>
+            ) : null}
+            {link.badge ? (
+              <span className="rounded-full bg-emerald-700 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-white">
+                {link.badge}
+              </span>
+            ) : null}
+          </span>
           <span className="mt-2 block font-semibold">{link.title}</span>
           {link.description ? (
             <span className="mt-2 block text-sm leading-6 text-slate-600">

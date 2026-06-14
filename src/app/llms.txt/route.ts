@@ -29,6 +29,7 @@ Site-ul ajuta utilizatorii din Romania sa estimeze consumul in kWh si costul apr
 ## Pagini importante
 
 - Homepage si calculator principal: ${siteConfig.url}
+- Calculator consum anual locuinta: ${absoluteUrl("/calculeaza/consum-anual-locuinta")}
 - Politica de confidentialitate: ${absoluteUrl("/confidentialitate")}
 - Politica de cookies: ${absoluteUrl("/cookies")}
 - Termeni si conditii: ${absoluteUrl("/termeni")}

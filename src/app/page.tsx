@@ -100,6 +100,12 @@ const popularComparisons = [
 
 const housingScenarios = [
   {
+    href: "/calculeaza/consum-anual-locuinta",
+    title: "Consum anual locuință",
+    body: "Vezi estimarea lunară și anuală a consumului electric pentru apartament sau casă.",
+    badge: "Nou"
+  },
+  {
     href: "/consum-locuinta/apartament-2-camere",
     title: "Apartament 2 camere",
     body: "Repere pentru o locuinta mica sau medie, fara aparate electrice extreme."
@@ -176,6 +182,15 @@ export default function Home() {
               >
                 Vezi toate calculatoarele
               </Link>
+              <Link
+                href="/calculeaza/consum-anual-locuinta"
+                className="inline-flex items-center gap-2 rounded-lg border border-emerald-300 bg-emerald-50 px-4 py-3 text-sm font-semibold text-emerald-900 transition hover:bg-emerald-100"
+              >
+                Consum anual locuință
+                <span className="rounded-full bg-emerald-700 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-white">
+                  Nou
+                </span>
+              </Link>
             </div>
             <div className="mt-5 grid gap-3 text-sm text-slate-700 sm:mt-7 sm:grid-cols-3">
               <span className="rounded-lg border border-emerald-100 bg-white/80 px-3 py-2">
@@ -195,6 +210,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <DeferredBillSimulator />
 
       <section id="navigare-rapida" className="border-y border-emerald-100 bg-white/72 px-4 py-10 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-7xl">
@@ -273,8 +290,6 @@ export default function Home() {
         </div>
       </section>
 
-      <DeferredBillSimulator />
-
       <section className="border-y border-emerald-100 bg-white/72 px-4 py-12 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-5 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
@@ -333,16 +348,27 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="mt-7 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-7 grid gap-4 md:grid-cols-2 lg:grid-cols-5">
             {housingScenarios.map((scenario) => (
               <Link
                 key={scenario.href}
                 href={scenario.href}
-                className="rounded-lg border border-emerald-100 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:border-emerald-300"
+                className={
+                  scenario.badge
+                    ? "rounded-lg border border-emerald-300 bg-emerald-50 p-5 shadow-sm transition hover:-translate-y-0.5 hover:border-emerald-400"
+                    : "rounded-lg border border-emerald-100 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:border-emerald-300"
+                }
               >
-                <h3 className="text-lg font-semibold text-slate-950">
-                  {scenario.title}
-                </h3>
+                <div className="flex flex-wrap items-center gap-2">
+                  <h3 className="text-lg font-semibold text-slate-950">
+                    {scenario.title}
+                  </h3>
+                  {scenario.badge ? (
+                    <span className="rounded-full bg-emerald-700 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-white">
+                      {scenario.badge}
+                    </span>
+                  ) : null}
+                </div>
                 <p className="mt-2 text-sm leading-6 text-slate-600">
                   {scenario.body}
                 </p>

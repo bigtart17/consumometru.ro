@@ -45,6 +45,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.86
     },
     {
+      url: `${siteConfig.url}/calculeaza/consum-anual-locuinta`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.84
+    },
+    {
       url: `${siteConfig.url}/aparate`,
       lastModified: new Date(),
       changeFrequency: "monthly",

@@ -6,9 +6,23 @@ import { useState } from "react";
 import { primaryNavigationLinks } from "@/data/siteNavigation";
 import { siteConfig } from "@/lib/site";
 
-const navigationLinks = [
-  ...primaryNavigationLinks,
-  { href: "/despre", label: "Despre" }
+type HeaderNavigationLink = {
+  href: string;
+  label: string;
+  featured?: boolean;
+};
+
+const annualCalculatorLink = {
+  href: "/calculeaza/consum-anual-locuinta",
+  label: "Consum anual",
+  featured: true
+};
+
+const navigationLinks: HeaderNavigationLink[] = [
+  primaryNavigationLinks[0],
+  annualCalculatorLink,
+  ...primaryNavigationLinks.slice(1),
+  { href: "/despre", label: "Despre", featured: false }
 ];
 
 export function SiteHeader() {
@@ -28,19 +42,32 @@ export function SiteHeader() {
           <span>{siteConfig.name}</span>
         </Link>
         <nav
-          aria-label="Navigatie principala"
+          aria-label="Navigație principală"
           className="hidden items-center gap-4 text-sm font-medium text-slate-700 md:flex lg:gap-6"
         >
           {navigationLinks.map((link) => (
-            <Link key={link.href} href={link.href} className="hover:text-emerald-700">
+            <Link
+              key={link.href}
+              href={link.href}
+              className={
+                link.featured
+                  ? "inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-emerald-50 px-3 py-2 font-semibold text-emerald-800 transition hover:border-emerald-300 hover:bg-emerald-100"
+                  : "hover:text-emerald-700"
+              }
+            >
               {link.label}
+              {link.featured ? (
+                <span className="rounded-full bg-emerald-700 px-1.5 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-white">
+                  Nou
+                </span>
+              ) : null}
             </Link>
           ))}
         </nav>
         <button
           type="button"
           className="inline-flex h-11 w-11 items-center justify-center rounded-lg border border-emerald-100 bg-white text-slate-800 shadow-sm transition hover:border-emerald-200 hover:text-emerald-700 focus:outline-none focus:ring-2 focus:ring-emerald-500 md:hidden"
-          aria-label={isOpen ? "Inchide meniul" : "Deschide meniul"}
+          aria-label={isOpen ? "Închide meniul" : "Deschide meniul"}
           aria-controls="mobile-navigation"
           aria-expanded={isOpen}
           onClick={() => setIsOpen((current) => !current)}
@@ -50,7 +77,7 @@ export function SiteHeader() {
       </div>
       <nav
         id="mobile-navigation"
-        aria-label="Navigatie mobila"
+        aria-label="Navigație mobilă"
         className={
           isOpen
             ? "mx-auto mt-3 grid max-w-7xl gap-2 rounded-lg border border-emerald-100 bg-white p-2 text-sm font-semibold text-slate-800 shadow-sm md:hidden"
@@ -61,10 +88,19 @@ export function SiteHeader() {
           <Link
             key={link.href}
             href={link.href}
-            className="rounded-lg px-3 py-3 hover:bg-emerald-50 hover:text-emerald-700"
+            className={
+              link.featured
+                ? "flex items-center justify-between rounded-lg border border-emerald-200 bg-emerald-50 px-3 py-3 text-emerald-900 hover:bg-emerald-100"
+                : "rounded-lg px-3 py-3 hover:bg-emerald-50 hover:text-emerald-700"
+            }
             onClick={() => setIsOpen(false)}
           >
-            {link.label}
+            <span>{link.label}</span>
+            {link.featured ? (
+              <span className="rounded-full bg-emerald-700 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-white">
+                Nou
+              </span>
+            ) : null}
           </Link>
         ))}
       </nav>

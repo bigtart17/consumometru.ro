@@ -15,7 +15,7 @@ export type SiteNavigationPillar = {
 export const siteNavigationPillars: SiteNavigationPillar[] = [
   {
     key: "calculeaza",
-    label: "Calculeaza",
+    label: "Calculează",
     description:
       "Instrumente pentru estimarea consumului unui aparat, a facturii lunare si a costului pentru 1 kWh.",
     href: "/calculeaza",
@@ -26,7 +26,7 @@ export const siteNavigationPillars: SiteNavigationPillar[] = [
         description: "Calculatorul principal si explicatiile de baza despre consum."
       },
       {
-        label: "Calculeaza consumul",
+        label: "Calculează consumul",
         href: "/calculeaza",
         description: "Pagina hub pentru instrumentele de calcul."
       },
@@ -34,6 +34,11 @@ export const siteNavigationPillars: SiteNavigationPillar[] = [
         label: "Calculator consum electric",
         href: "/#calculator",
         description: "Introdu puterea, orele de utilizare si pretul kWh."
+      },
+      {
+        label: "Consum anual locuință",
+        href: "/calculeaza/consum-anual-locuinta",
+        description: "Estimează consumul și costul locuinței pentru fiecare lună din an."
       },
       {
         label: "Simulator factura lunara",
@@ -88,7 +93,7 @@ export const siteNavigationPillars: SiteNavigationPillar[] = [
   },
   {
     key: "comparatii",
-    label: "Comparatii",
+    label: "Comparații",
     description:
       "Pagini care compara consumul si costul estimativ intre doua variante de aparate.",
     href: "/comparatii",
